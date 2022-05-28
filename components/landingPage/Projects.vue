@@ -4,14 +4,16 @@
     <p class="fs-3 fw-light text-center text-dark">
       Filter projects by category
     </p>
-    <v-select
-      class="vue-select"
-      label="title"
-      :reduce="(item) => item.id"
-      :clearable="false"
-      :options="options"
-      v-model="projectType"
-    ></v-select>
+    <div class="v-select-parent">
+      <v-select
+        class="vue-select w-100"
+        label="title"
+        :reduce="(item) => item.id"
+        :clearable="false"
+        :options="options"
+        v-model="projectType"
+      ></v-select>
+    </div>
     <LandingPageProjectCard :projects="projects" />
     <div class="text-center">
       <b-button variant="primary py-2 px-3 fs-3 mt-5"> More Projects </b-button>
@@ -91,7 +93,7 @@ export default {
 h2 {
   font-size: 45px;
 }
-.vue-select {
+.v-select-parent {
   width: 15%;
   @media (max-width: 991.98px) {
     width: 25%;
