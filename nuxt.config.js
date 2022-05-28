@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'Vuxy-Nuxt',
+        title: 'Abdelmo’men',
         htmlAttrs: {
             lang: 'en',
             dir: "",
@@ -17,8 +17,8 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/zoro.jpg' },
+            { rel: 'stylesheet', type: 'image/x-icon', href: '/zoro.jpg' }
         ]
     },
 
@@ -55,7 +55,7 @@ export default {
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
-        '@nuxtjs/pwa',
+
         // '@nuxtjs/google-fonts',
     ],
 
@@ -79,6 +79,7 @@ export default {
         'bootstrap-vue/nuxt',
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/pwa',
         '@nuxtjs/auth-next',
         "@nuxtjs/i18n",
         'nuxt-vue-select',
@@ -132,6 +133,17 @@ export default {
             callback: '/dashboard',
             home: '/dashboard'
         }
+    },
+    pwa: {
+        icon: {
+            fileName: 'zoro.jpg',
+        },
+        manifest: {
+            name: 'Abdelmomen Portfolio',
+            short_name: 'Abdelmomen',
+            lang: 'en',
+            display: 'standalone',
+        },
     },
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
