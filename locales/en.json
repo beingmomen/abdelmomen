@@ -1,0 +1,46 @@
+{
+  "login": {
+    "welcome": "Welcome to Vuexy!",
+    "please": "Please sign-in to your account and start the adventure",
+    "admin": "Admin",
+    "client": "Client",
+    "tooltip": "This is just for ACL demo purpose",
+    "new_platform": "New on our platform?",
+    "new_account": "Create an account"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "email": "Email",
+    "eCommerce": "eCommerce",
+    "analytics": "Analytics",
+    "apps": "Apps",
+    "pages": "Pages"
+  },
+  "navbar": {
+    "arabic": "Arabic",
+    "english": "English",
+    "german": "German",
+    "admin": "Admin",
+    "profile": "Profile",
+    "setting": "Settings",
+    "logout": "Logout"
+  },
+  "footer": {
+    "copyright": "COPYRIGHT © 2022",
+    "all": "All rights Reserved ,",
+    "link": "Pixinvent",
+    "end": "Hand-crafted & Made with"
+  },
+  "inputs": {
+    "email": "ُEmail",
+    "password": "Password",
+    "forget": "Forgot Password?"
+  },
+  "buttons": {
+    "login": "Sign in",
+    "logout": "Sign Up"
+  },
+  "tables": {
+    "per_page": "Per Page"
+  }
+}

@@ -1,0 +1,38 @@
+/*================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+@import "@core/scss/vue/libs/vue-select.scss";
+a {
+  color: unset !important;
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.dark-mode-text {
+  color: #1e3851 !important;
+}
+
+.light-mode-text {
+  color: #fff !important;
+}
+
+.nav-item {
+  .nav-link {
+    &:hover {
+      color: #7367f0 !important;
+    }
+  }
+}
+
+button:focus {
+  box-shadow: none !important;
+}
