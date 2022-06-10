@@ -1,5 +1,5 @@
 <template>
-  <div class="container">All Projects</div>
+  <div class="container">All Projects from api</div>
 </template>
 
 <script>
