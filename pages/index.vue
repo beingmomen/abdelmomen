@@ -11,6 +11,7 @@ export default {
   async asyncData({ store, $axios, params, $fire }) {
     $fire.firestore
       .collection("projects")
+      .limit(3)
       .get()
       .then((res) => {
         store.dispatch("dashboard/projects/getAllDataFromApi", res);
@@ -23,27 +24,7 @@ export default {
       projects: [],
     };
   },
-  mounted() {
-    // this.getProjects();
-  },
-  methods: {
-    getProjects() {
-      this.$fire.firestore
-        .collection("projects")
-        .get()
-        .then((res) => {
-          console.warn("res :::", res);
-          res.forEach((doc) => {
-            this.projects.push({ ...doc.data(), id: doc.id });
-          });
-        })
-        .then(() => {
-          this.$store.dispatch(
-            "dashboard/projects/getAllDataFromApi",
-            this.projects
-          );
-        });
-    },
-  },
+  mounted() {},
+  methods: {},
 };
 </script>

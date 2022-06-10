@@ -16,7 +16,9 @@
     </div>
     <LandingPageProjectCard />
     <div class="text-center">
-      <b-button variant="primary py-2 px-3 fs-3 mt-5"> More Projects </b-button>
+      <b-button @click="getMore" variant="primary py-2 px-3 fs-3 mt-5">
+        More Projects
+      </b-button>
     </div>
     <hr />
     <LandingPageSocial />
@@ -48,7 +50,21 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    getMore() {
+      if (this.getAllProjectsData.length == 6) {
+        this.$router.push("/projects");
+      } else {
+        this.$fire.firestore
+          .collection("projects")
+          .limit(6)
+          .get()
+          .then((res) => {
+            this.$store.dispatch("dashboard/projects/getAllDataFromApi", res);
+          });
+      }
+    },
+  },
 };
 </script>
 
