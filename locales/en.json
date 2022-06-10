@@ -42,5 +42,9 @@
   },
   "tables": {
     "per_page": "Per Page"
-  }
+  },
+  "delete_msg": "Are You Sure To Delete This Item",
+  "delete_confirm": "Confirm To Delete",
+  "yes": "Yes",
+  "no": "No"
 }

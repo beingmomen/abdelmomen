@@ -1,4 +1,8 @@
+
+
 export default async function ({ app, redirect, store, $i18n }) {
+
+
     const cookieRes = await app.$cookies.get('i18n_redirected')
 
     if (cookieRes == "ar") {

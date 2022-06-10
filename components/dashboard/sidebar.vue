@@ -15,7 +15,7 @@
             <span class="brand-logo">
               <img src="/img/logo.svg" alt="logo" />
             </span>
-            <h2 class="brand-text">Vuexy</h2>
+            <h2 class="brand-text">Abdelmo’men</h2>
           </nuxt-link>
         </li>
         <li class="nav-item nav-toggle">
@@ -43,15 +43,14 @@
         />
         <MainSidebarBreakLink />
         <MainSidebarLink
-          :name="$t(`sidebar.email`)"
-          route="dashboard/email"
-          icon="fa-envelope"
+          name="Title"
+          route="dashboard/title"
+          icon="fa-heading"
         />
-        <MainSidebarGroupLink
-          :page="$t(`sidebar.eCommerce`)"
-          :childNumber="true"
-          :child="dashboardChild"
-          icon="fa-cart-shopping"
+        <MainSidebarLink
+          name="Projects"
+          route="dashboard/projects"
+          icon="fa-diagram-project"
         />
       </ul>
     </div>

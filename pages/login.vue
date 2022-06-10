@@ -169,9 +169,7 @@ export default {
         let res = await this.$auth.loginWith("local", {
           data: this.login,
         });
-
         let position = this.$i18n.locale == "en" ? "top-right" : "top-left";
-
         this.$toast(`Welcome ${res.data.email}`, {
           hideProgressBar: true,
           position,

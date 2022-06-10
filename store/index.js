@@ -1,4 +1,5 @@
 export const state = () => ({
+    token: null,
     layoutCollapsed: true,
     sidebar: false,
     mode: true,
@@ -40,7 +41,26 @@ export const actions = {
         } else {
             commit("setDashDir", "ltr")
         }
-    }
+    },
+    // nuxtServerInit({ commit }, { $fire }) {
+    //     let projects = [];
+    //     $fire.firestore
+    //         .collection("projects")
+    //         .get()
+    //         .then((res) => {
+    //             res.forEach((doc) => {
+    //                 projects.push({ ...doc.data(), id: doc.id });
+    //             });
+    //         })
+    //         .then(() => {
+    //             console.warn("projects array root :::", projects);
+    //             commit("dashboard/projects/setAllData", projects, { root: true })
+    //             // store.dispatch("dashboard/projects/getDataFromApi", {
+    //             //   key: "AllData",
+    //             //   value: projects,
+    //             // });
+    //         })
+    // }
 
 };
 

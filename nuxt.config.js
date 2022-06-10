@@ -26,7 +26,7 @@ export default {
         name: 'my-page',
         mode: 'out-in',
         beforeEnter(el) {
-            console.warn('Before enter...');
+            // console.warn('Before enter...');
         }
     },
 
@@ -48,6 +48,9 @@ export default {
         '~/plugins/mixins/ui/forms.js',
         '~/plugins/mixins/ui/transition.js',
         '~/plugins/mixins/ui/layout.js',
+        '~/plugins/mixins/dashboard/title.js',
+        '~/plugins/mixins/dashboard/projects.js',
+        // '~/plugins/firebase.js',
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -91,7 +94,34 @@ export default {
                 position: "top-center",
             },
         ],
+        [
+            '@nuxtjs/firebase',
+            {
+                config: {
+                    apiKey: "AIzaSyD9L-CLiD5t7FgnWaldEPT5-yuJ4xhKt0o",
+                    authDomain: "beingmomen.firebaseapp.com",
+                    databaseURL: "https://beingmomen-default-rtdb.firebaseio.com",
+                    projectId: "beingmomen",
+                    storageBucket: "beingmomen.appspot.com",
+                    messagingSenderId: "863482997017",
+                    appId: "1:863482997017:web:f06f4d0ebc89c3c84f3d88",
+                    measurementId: "G-5TGYRK0S9B"
+                },
+                services: {
+                    auth: true,
+                    firestore: true,
+                    functions: true,
+                    storage: true,
+                    database: true,
+                    messaging: true,
+                    performance: true,
+                    analytics: true,
+                    remoteConfig: true
+                }
+            }
+        ]
     ],
+
 
     i18n: {
         lazy: true,
@@ -122,7 +152,7 @@ export default {
                     property: 'idToken',
                 },
                 endpoints: {
-                    login: { url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAd81BzrVH1na5-xuVw5sBT9at4rqjIBkE`, method: "post" },
+                    login: { url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD9L-CLiD5t7FgnWaldEPT5-yuJ4xhKt0o                    `, method: "post" },
                     user: false
                 },
             },
@@ -151,6 +181,7 @@ export default {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
         baseURL: '/',
     },
+
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},

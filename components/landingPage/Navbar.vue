@@ -8,12 +8,12 @@
     >
       <b-nav class="py-md-3 py-1" align="left">
         <li v-if="!dashboardMode" class="nav-item">
-          <nuxt-link to="" class="nav-link nav-logo">
+          <nuxt-link to="/" class="nav-link nav-logo">
             <img src="~/assets/images/logo-light.svg" alt="logo" />
           </nuxt-link>
         </li>
         <li v-else class="nav-item">
-          <nuxt-link to="" class="nav-link nav-logo">
+          <nuxt-link to="/" class="nav-link nav-logo">
             <img src="~/assets/images/logo-dark.svg" alt="logo" />
           </nuxt-link>
         </li>
@@ -22,7 +22,6 @@
       <b-navbar-nav class="me-4 mode-btn-center">
         <li v-if="!dashboardMode" class="nav-item mode-btn">
           <b-button
-            v-ripple.400="'rgba(113, 102, 240, 0.15)'"
             variant="outline-primary"
             class="btn-icon"
             @click="toggleMode('light')"
@@ -32,7 +31,6 @@
         </li>
         <li v-else class="nav-item mode-btn">
           <b-button
-            v-ripple.400="'rgba(113, 102, 240, 0.15)'"
             variant="outline-primary"
             class="btn-icon"
             @click="toggleMode('dark')"
@@ -52,7 +50,7 @@
         <b-navbar-nav class="w-75 justify-content-center">
           <li class="nav-item ps-4 ps-md-0" @click="goTo('projects')">
             <nuxt-link
-              to=""
+              to="projects"
               :class="dashboardMode ? 'dark-mode-text' : 'light-mode-text'"
               class="nav-link fs-4"
             >
@@ -87,7 +85,6 @@
           <li class="nav-item ps-3 ps-md-0 mb-3 mb-md-0 mx-2">
             <b-button
               class="fw-bold fs-5 text-white"
-              v-ripple.400="'rgba(255, 255, 255, 0.15)'"
               variant="primary"
               v-b-modal.modal-select2
             >
@@ -96,7 +93,6 @@
           </li>
           <li v-if="!dashboardMode" class="nav-item mb-3 mb-md-0 mode-btn mx-2">
             <b-button
-              v-ripple.400="'rgba(113, 102, 240, 0.15)'"
               variant="outline-primary"
               class="btn-icon"
               @click="toggleMode('light')"
@@ -106,7 +102,6 @@
           </li>
           <li v-else class="nav-item mode-btn mb-3 mb-md-0 mx-2">
             <b-button
-              v-ripple.400="'rgba(113, 102, 240, 0.15)'"
               variant="outline-primary"
               class="btn-icon"
               @click="toggleMode('dark')"
@@ -172,10 +167,9 @@ export default {
       }
     },
     goTo(refName) {
-      let element = this.$refs[refName];
-      let top = element.offsetTop;
-
-      window.scrollTo(0, top);
+      // let element = this.$refs[refName];
+      // let top = element.offsetTop;
+      // window.scrollTo(0, top);
     },
   },
   components: {

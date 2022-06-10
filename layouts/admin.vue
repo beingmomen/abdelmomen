@@ -20,7 +20,6 @@
       <DashboardSidebar :width="window.width" />
       <div class="sidenav-overlay"></div>
       <Nuxt />
-      <DashboardFooter />
     </div>
     <div v-show="!loading" class="flower-spinner">
       <div class="dots-container">
@@ -36,6 +35,9 @@
 // import { FlowerSpinner } from "epic-spinners";
 export default {
   // transition: "home",
+  head: {
+    titleTemplate: "%s - Admin",
+  },
   middleware: ["mode", "lang", "authentication"],
   mounted() {
     window.addEventListener("resize", this.handleResize);

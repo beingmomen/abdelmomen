@@ -5,9 +5,7 @@
     <h3 class="mb-75 mt-4">
       <b-link>$48.9k</b-link>
     </h3>
-    <b-button v-ripple.400="'rgba(255, 255, 255, 0.15)'" variant="primary">
-      View Sales
-    </b-button>
+    <b-button variant="primary"> View Sales </b-button>
     <b-img
       :src="require('@/assets/images/illustration/badge.svg')"
       class="congratulation-medal"

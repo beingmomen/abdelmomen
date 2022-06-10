@@ -14,7 +14,7 @@
         v-model="projectType"
       ></v-select>
     </div>
-    <LandingPageProjectCard :projects="projects" />
+    <LandingPageProjectCard />
     <div class="text-center">
       <b-button variant="primary py-2 px-3 fs-3 mt-5"> More Projects </b-button>
     </div>
@@ -46,46 +46,9 @@ export default {
           title: "Nuxt",
         },
       ],
-      projects: [
-        {
-          id: 1,
-          title: "Project Title",
-          desc: "Nuxt",
-          img: "02.jpg",
-        },
-        {
-          id: 2,
-          title: "Project Title",
-          desc: "Nuxt",
-          img: "03.jpg",
-        },
-        {
-          id: 3,
-          title: "Project Title",
-          desc: "Nuxt",
-          img: "04.jpg",
-        },
-        {
-          id: 4,
-          title: "Project Title",
-          desc: "Nuxt",
-          img: "05.jpg",
-        },
-        {
-          id: 5,
-          title: "Project Title",
-          desc: "Nuxt",
-          img: "06.jpg",
-        },
-        {
-          id: 6,
-          title: "Project Title",
-          desc: "Nuxt",
-          img: "07.jpg",
-        },
-      ],
     };
   },
+  methods: {},
 };
 </script>
 

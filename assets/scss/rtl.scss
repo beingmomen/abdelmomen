@@ -90,6 +90,9 @@
         }
       }
       .app-content {
+        @media (max-width: 1199.98px) {
+          margin-right: 0;
+        }
         margin-right: 260px;
         margin-left: unset;
         text-align: right;
@@ -127,8 +130,6 @@
       .brand-logo {
         left: unset;
         right: 2rem;
-        .brand-text {
-        }
       }
       .auth-bg {
         text-align: right;
@@ -166,6 +167,25 @@
         }
       }
     }
+    .modal-content {
+      .modal-header {
+        .close {
+          margin-left: -1.4rem !important;
+          margin-right: auto !important;
+          transform: translate(-8px, -2px);
+        }
+      }
+      .modal-body {
+        text-align: right !important;
+      }
+    }
+    // .v-select {
+    //   ul {
+    //     li {
+    //       text-align: right !important;
+    //     }
+    //   }
+    // }
   }
   .mr-auto {
     margin-left: auto !important;
@@ -182,5 +202,33 @@
   .mx-2 {
     margin-right: unset !important;
     margin-left: 1.5rem !important;
+  }
+
+  .mr-50,
+  .mx-50 {
+    margin-right: unset !important;
+    margin-left: 0.5rem !important;
+  }
+
+  .ml-50,
+  .mx-50 {
+    margin-left: unset !important;
+    margin-right: 0.5rem !important;
+  }
+
+  @media (min-width: 1200px) {
+    .ml-xl-5,
+    .mx-xl-5 {
+      margin-left: unset !important;
+      margin-right: 4rem !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .mr-xl-5,
+    .mx-xl-5 {
+      margin-right: unset !important;
+      margin-left: 4rem !important;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { ValidationObserver, extend } from "vee-validate";
+import { ValidationObserver } from "vee-validate";
 import { ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
 
 

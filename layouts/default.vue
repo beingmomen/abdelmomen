@@ -2,14 +2,16 @@
   <div class="layout-default pb-5">
     <LandingPageNavbar />
     <Nuxt />
-    <LandingPageHero />
-    <LandingPageProjects ref="projects" />
   </div>
 </template>
 
 <script>
 export default {
   middleware: ["mode", "lang"],
+  async asyncData({ params, $http }) {
+    const post = await $http.$get(`https://full-api.herokuapp.com/projects`);
+    return { post };
+  },
 };
 </script>
 
