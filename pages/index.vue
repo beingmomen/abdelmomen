@@ -8,14 +8,23 @@
 <script>
 export default {
   name: "IndexPage",
-
+  async asyncData({ store, $axios, params, $fire }) {
+    $fire.firestore
+      .collection("projects")
+      .get()
+      .then((res) => {
+        store.dispatch("dashboard/projects/getAllDataFromApi", res);
+      })
+      .catch((err) => {});
+    return {};
+  },
   data() {
     return {
       projects: [],
     };
   },
   mounted() {
-    this.getProjects();
+    // this.getProjects();
   },
   methods: {
     getProjects() {
@@ -30,7 +39,7 @@ export default {
         })
         .then(() => {
           this.$store.dispatch(
-            "dashboard/projects/getDataFromApi",
+            "dashboard/projects/getAllDataFromApi",
             this.projects
           );
         });
