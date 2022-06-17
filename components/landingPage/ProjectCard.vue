@@ -7,15 +7,17 @@
       md="6"
       xl="4"
     >
-      <b-card
-        :img-src="project.image"
-        img-top
-        img-alt="card img"
-        :title="project.ProjectTitle"
-        class="mb-3 img-container"
-      >
-        <b-card-text v-text="project.ProjectDesc"> </b-card-text>
-      </b-card>
+      <a :href="project.URL" target="_blank">
+        <b-card
+          :img-src="project.Image"
+          img-top
+          img-alt="card img"
+          :title="project.Name"
+          class="mb-3 img-container"
+        >
+          <b-card-text v-text="project.Desc"> </b-card-text>
+        </b-card>
+      </a>
     </b-col>
   </b-row>
 </template>

@@ -150,7 +150,7 @@ export default {
       this.currentPage = 1;
     },
     showMsgBoxTwo(data) {
-      console.warn("data :::", data.item.id);
+      console.warn("id :::", data.item.id);
       this.$bvModal
         .msgBoxConfirm(`${this.$t("delete_msg")} -- ( ${data.item.Name} )`, {
           title: this.$t("delete_confirm"),

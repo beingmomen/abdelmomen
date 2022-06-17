@@ -8,9 +8,8 @@ const mixins = {
         getAllProjectsData() {
             return this.$store.getters["dashboard/projects/getAllData"]
         },
-        getProjectImageFromProjectPage() {
-            return this.$store.getters["dashboard/projects/edit/getProjectImagePreview"]
-
+        getImageFromProjectPage() {
+            return this.$store.getters["dashboard/projects/edit/getImagePreview"]
         }
     },
 

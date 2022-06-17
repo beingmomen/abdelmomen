@@ -42,25 +42,14 @@ export const actions = {
             commit("setDashDir", "ltr")
         }
     },
-    // nuxtServerInit({ commit }, { $fire }) {
-    //     let projects = [];
-    //     $fire.firestore
-    //         .collection("projects")
-    //         .get()
-    //         .then((res) => {
-    //             res.forEach((doc) => {
-    //                 projects.push({ ...doc.data(), id: doc.id });
-    //             });
-    //         })
-    //         .then(() => {
-    //             console.warn("projects array root :::", projects);
-    //             commit("dashboard/projects/setAllData", projects, { root: true })
-    //             // store.dispatch("dashboard/projects/getDataFromApi", {
-    //             //   key: "AllData",
-    //             //   value: projects,
-    //             // });
-    //         })
-    // }
+    async nuxtServerInit({ commit }, { $fire, store }) {
+        await $fire.firestore
+            .collection("skills")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/skills/getAllDataFromApi", res);
+            });
+    }
 
 };
 

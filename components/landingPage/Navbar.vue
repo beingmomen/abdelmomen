@@ -57,18 +57,18 @@
               Projects
             </nuxt-link>
           </li>
-          <li class="nav-item ps-4 ps-md-0">
+          <!-- <li class="nav-item ps-4 ps-md-0">
             <nuxt-link
-              to=""
+              to="about-me"
               :class="dashboardMode ? 'dark-mode-text' : 'light-mode-text'"
               class="nav-link fs-4"
             >
               About Me
             </nuxt-link>
-          </li>
+          </li> -->
           <li class="nav-item ps-4 ps-md-0">
             <nuxt-link
-              to=""
+              to="contacts"
               :class="dashboardMode ? 'dark-mode-text' : 'light-mode-text'"
               class="nav-link fs-4"
             >
@@ -117,25 +117,47 @@
       title="What project are you looking for?"
       ok-title="Send Request"
       cancel-variant="outline-secondary"
+      @ok="handleOk"
     >
       <b-form>
-        <b-form-group>
-          <b-form-input placeholder="Name" />
-        </b-form-group>
-        <b-form-group>
-          <b-form-input type="email" placeholder="Email" />
-        </b-form-group>
-        <b-form-group>
-          <v-select
-            v-model="selected"
-            :clearable="false"
-            :dir="dashDirection"
-            :options="option"
-          />
-        </b-form-group>
-        <b-form-group>
-          <b-form-textarea placeholder="Project Description" rows="6" />
-        </b-form-group>
+        <FormInput
+          label="Name"
+          placeholder="Name"
+          storeKey="Name"
+          :notLabel="false"
+          :module="module"
+          lg="12"
+          md="12"
+        />
+        <FormInput
+          label="Email"
+          placeholder="Email"
+          storeKey="Email"
+          :notLabel="false"
+          :module="module"
+          lg="12"
+          md="12"
+        />
+        <FormVueSelect
+          title="hid"
+          label="title"
+          storeKey="ProjectType"
+          lg="12"
+          md="12"
+          :notLabel="false"
+          :notId="true"
+          :module="module"
+          :allData="projetsTypeVSD"
+        />
+        <b-col md="12" class="mb-1">
+          <b-form-group>
+            <b-form-textarea
+              v-model="Description"
+              placeholder="Project Description"
+              rows="6"
+            />
+          </b-form-group>
+        </b-col>
       </b-form>
     </b-modal>
   </div>
@@ -146,12 +168,8 @@ import { SunIcon, MoonIcon } from "vue-feather-icons";
 export default {
   data() {
     return {
-      option: [
-        "Frontend Developer",
-        "Full-Stack Developer ",
-        "Backend Developer",
-      ],
-      selected: "Frontend Developer",
+      module: "dashboard/hireMe",
+      Description: null,
     };
   },
   methods: {
@@ -166,15 +184,22 @@ export default {
         document.body.classList.add("light-layout");
       }
     },
-    goTo(refName) {
-      // let element = this.$refs[refName];
-      // let top = element.offsetTop;
-      // window.scrollTo(0, top);
+    goTo(refName) {},
+    handleOk() {
+      this.$store.dispatch("dashboard/hireMe/addToDB");
     },
   },
   components: {
     SunIcon,
     MoonIcon,
+  },
+  watch: {
+    Description(newValue, oldValue) {
+      this.$store.commit("dashboard/hireMe/setDescription", {
+        key: "Description",
+        value: newValue,
+      });
+    },
   },
 };
 </script>

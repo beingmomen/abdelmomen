@@ -1,21 +1,21 @@
 <template>
   <b-container class="pt-5">
     <h2 class="fw-bold text-center text-dark mb-4">Projects Portfolio</h2>
-    <p class="fs-3 fw-light text-center text-dark">
+    <p v-if="!more" class="fs-3 fw-light text-center text-dark">
       Filter projects by category
     </p>
-    <div class="v-select-parent">
+    <div v-if="!more" class="v-select-parent">
       <v-select
         class="vue-select w-100"
         label="title"
-        :reduce="(item) => item.id"
+        :reduce="(item) => item.title"
         :clearable="false"
         :options="options"
         v-model="projectType"
       ></v-select>
     </div>
     <LandingPageProjectCard />
-    <div class="text-center">
+    <div v-if="more" class="text-center">
       <b-button @click="getMore" variant="primary py-2 px-3 fs-3 mt-5">
         More Projects
       </b-button>
@@ -27,9 +27,15 @@
 
 <script>
 export default {
+  props: {
+    more: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
-      projectType: 0,
+      projectType: "All Projects",
       options: [
         {
           id: 0,
@@ -47,6 +53,10 @@ export default {
           id: 3,
           title: "Nuxt",
         },
+        {
+          id: 4,
+          title: "Laravel",
+        },
       ],
     };
   },
@@ -63,6 +73,30 @@ export default {
             this.$store.dispatch("dashboard/projects/getAllDataFromApi", res);
           });
       }
+    },
+  },
+  watch: {
+    projectType(newValue, oldValue) {
+      let arr = [];
+      this.$fire.firestore
+        .collection("projects")
+        .get()
+        .then((res) => {
+          res.forEach((doc) => {
+            let data = { ...doc.data(), id: doc.id };
+            arr.push(data);
+          });
+        })
+        .then(() => {
+          let filter =
+            newValue == "All Projects"
+              ? arr
+              : arr.filter((x) => x.Desc.includes(newValue));
+          this.$store.dispatch(
+            "dashboard/projects/getAllFilterdDataFromApi",
+            filter
+          );
+        });
     },
   },
 };

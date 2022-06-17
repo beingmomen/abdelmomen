@@ -44,15 +44,13 @@
 <script>
 export default {
   layout: "admin",
-
-  async asyncData({ store, $axios, params, $fire }) {
-    $fire.firestore
+  async asyncData({ $fire, store }) {
+    return $fire.firestore
       .collection("heroTitle")
       .get()
       .then((res) => {
         store.dispatch("dashboard/title/getAllDataFromApi", res);
-      })
-      .catch((err) => {});
+      });
     return {};
   },
   data() {

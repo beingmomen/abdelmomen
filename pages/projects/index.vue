@@ -1,9 +1,21 @@
 <template>
-  <div class="container">All Projects from api</div>
+  <div class="container">
+    <LandingPageProjects :more="false" />
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  async asyncData({ $fire, store }) {
+    return $fire.firestore
+      .collection("projects")
+      .get()
+      .then((res) => {
+        store.dispatch("dashboard/projects/getAllDataFromApi", res);
+      });
+    return {};
+  },
+};
 </script>
 
 <style lang="scss" scoped>

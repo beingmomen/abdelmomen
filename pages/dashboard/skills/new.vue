@@ -5,12 +5,11 @@
         <b-row class="justify-content-between">
           <FormInput label="Name" storeKey="Name" :module="module" lg="12" />
           <FormInput
-            label="Description"
-            storeKey="Desc"
+            label="Experience Years"
+            storeKey="ExperienceYears"
             :module="module"
             lg="12"
           />
-          <FormInput label="URL" storeKey="URL" :module="module" lg="12" />
           <FormInputFile
             label="Image"
             storeKey="Image"
@@ -18,7 +17,7 @@
             lg="12"
           />
           <div class="col-12 text-end">
-            <b-button @click="addProject" variant="primary" class="add">
+            <b-button @click="addData" variant="primary" class="add">
               Add
             </b-button>
           </div>
@@ -37,13 +36,13 @@ export default {
   layout: "admin",
   data() {
     return {
-      module: "dashboard/projects",
+      module: "dashboard/skills",
     };
   },
   methods: {
-    addProject() {
-      this.$store.dispatch("dashboard/projects/addToDB").then(() => {
-        this.$router.push("/dashboard/projects");
+    addData() {
+      this.$store.dispatch("dashboard/skills/addToDB").then(() => {
+        this.$router.push("/dashboard/skills");
       });
     },
   },

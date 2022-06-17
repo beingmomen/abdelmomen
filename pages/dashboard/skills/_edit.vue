@@ -3,27 +3,18 @@
     <b-card no-body class="card-statistics">
       <b-card-body class="statistics-body">
         <b-row class="justify-content-between">
+          <FormInput label="Name" storeKey="Name" :module="module" lg="12" />
           <FormInput
-            label="Name"
-            storeKey="Name"
+            label="Experience Years"
+            storeKey="ExperienceYears"
             :module="module"
             lg="12"
-            md="12"
           />
-          <FormInput
-            label="Description"
-            storeKey="Desc"
-            :module="module"
-            lg="12"
-            md="12"
-          />
-          <FormInput label="URL" storeKey="URL" :module="module" lg="12" />
           <FormInputFile
             label="Image"
             storeKey="Image"
             :module="module"
             lg="12"
-            md="12"
           />
           <b-col lg="4" md="6" class="mb-3" style="width: 300px">
             <b-container fluid class="p-1 bg-dark">
@@ -33,7 +24,7 @@
                     class="img"
                     thumbnail
                     fluid
-                    :src="getImageFromProjectPage"
+                    :src="getImageFromSkillsPage"
                   />
                 </b-col>
               </b-row>
@@ -55,26 +46,26 @@ export default {
   layout: "admin",
   async asyncData({ $fire, store, params }) {
     return $fire.firestore
-      .collection("projects")
+      .collection("skills")
       .doc(params.edit)
       .get()
       .then((res) => {
-        store.dispatch("dashboard/projects/edit/getAllDataFromApi", res);
+        store.dispatch("dashboard/skills/edit/getAllDataFromApi", res);
       });
     return {};
   },
 
   data() {
     return {
-      module: "dashboard/projects/edit",
+      module: "dashboard/skills/edit",
     };
   },
   methods: {
     editData() {
       this.$store
-        .dispatch("dashboard/projects/edit/editInDB", this.$route.params.edit)
+        .dispatch("dashboard/skills/edit/editInDB", this.$route.params.edit)
         .then(() => {
-          this.$router.push("/dashboard/projects");
+          this.$router.push("/dashboard/skills");
         });
     },
   },

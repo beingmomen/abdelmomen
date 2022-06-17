@@ -1,33 +1,29 @@
 export const state = () => ({
     AllData: [],
-    Image: null,
     data: {
         Name: null,
-        Desc: null,
-        URL: null,
+        ExperienceYears: null,
     },
+    Image: null,
+
 });
 
 export const getters = {
+    getAllData(state) {
+        return state.AllData
+    },
     getName(state) {
         return state.data.Name
     },
-    getDesc(state) {
-        return state.data.Desc
-    },
-    getURL(state) {
-        return state.data.URL
+    getExperienceYears(state) {
+        return state.data.ExperienceYears
     },
     getImage(state) {
         return state.Image
     },
-    getAllData(state) {
-        return state.AllData
-    },
 };
 
 export const actions = {
-
     getAllDataFromApi({ commit }, payload) {
         let arr = []
         payload.forEach((doc) => {
@@ -37,45 +33,34 @@ export const actions = {
         commit("setAllData", arr)
     },
 
-    getAllFilterdDataFromApi({ commit }, payload) {
-        commit("setAllData", payload)
-    },
-
     addToDB({ state, dispatch }, payload) {
-        return this.$fire.storage.ref(`projects/${state.Image.lastModified + state.Image.name}`).put(state.Image).then((res) => {
+        return this.$fire.storage.ref(`skills/${state.Image.lastModified + state.Image.name}`).put(state.Image).then((res) => {
             res.ref.getDownloadURL().then(Image => {
-                this.$fire.firestore.collection("projects").add({ ...state.data, Image }).then((x) => {
+                this.$fire.firestore.collection("skills").add({ ...state.data, Image }).then((x) => {
                     dispatch("resetData")
                     this.$toast.success("Added successfully");
                 })
             })
         })
     },
-
     resetData({ commit }) {
         commit("setName", { key: "Name", value: null })
-        commit("setDesc", { key: "Desc", value: null })
-        commit("setURL", { key: "URL", value: null })
+        commit("setExperienceYears", { key: "ExperienceYears", value: null })
         commit("setImage", { key: "Image", value: null })
     }
-
 };
 
 export const mutations = {
+    setAllData(state, val) {
+        state.AllData = val
+    },
     setName(state, val) {
         state.data[val.key] = val.value
     },
-    setDesc(state, val) {
-        state.data[val.key] = val.value
-    },
-    setURL(state, val) {
+    setExperienceYears(state, val) {
         state.data[val.key] = val.value
     },
     setImage(state, val) {
         state[val.key] = val.value
     },
-    setAllData(state, val) {
-        state.AllData = val
-    },
-
 };

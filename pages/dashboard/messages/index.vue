@@ -1,9 +1,9 @@
 <template>
   <div class="app-content content">
-    <AdminProjectsTable
+    <AdminMessagesTable
       @deleteItem="deleteItem"
       :headers="tableHeader"
-      :items="getAllProjectsData"
+      :items="getAllMessagesData"
     />
   </div>
 </template>
@@ -13,10 +13,10 @@ export default {
   layout: "admin",
   async asyncData({ $fire, store }) {
     await $fire.firestore
-      .collection("projects")
+      .collection("messages")
       .get()
       .then((res) => {
-        store.dispatch("dashboard/projects/getAllDataFromApi", res);
+        store.dispatch("dashboard/messages/getAllDataFromApi", res);
       });
     return {};
   },
@@ -24,18 +24,18 @@ export default {
     return {
       tableHeader: [
         {
-          key: "Name",
-          label: "Name",
+          key: "FullName",
+          label: "Full Name",
           sortable: false,
         },
         {
-          key: "Desc",
-          label: "Description",
+          key: "Email",
+          label: "Email",
           sortable: false,
         },
         {
-          key: "Image",
-          label: "Image",
+          key: "Subject",
+          label: "Subject",
           sortable: false,
         },
         {
@@ -51,16 +51,16 @@ export default {
   },
   methods: {
     deleteItem(id) {
-      this.$fire.firestore.collection("projects").doc(id).delete();
+      this.$fire.firestore.collection("messages").doc(id).delete();
       this.$toast.success("Deleted successfully");
       this.getAllDataFromApi();
     },
     getAllDataFromApi() {
       this.$fire.firestore
-        .collection("projects")
+        .collection("messages")
         .get()
         .then((res) => {
-          this.$store.dispatch("dashboard/projects/getAllDataFromApi", res);
+          this.$store.dispatch("dashboard/messages/getAllDataFromApi", res);
         });
     },
   },

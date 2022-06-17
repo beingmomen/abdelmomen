@@ -152,16 +152,19 @@ export default {
     showMsgBoxTwo(data) {
       console.warn("data :::", data.item.id);
       this.$bvModal
-        .msgBoxConfirm(`${this.$t("delete_msg")} -- ( ${data.item.Name} )`, {
-          title: this.$t("delete_confirm"),
-          size: "md",
-          okVariant: "primary",
-          okTitle: this.$t("yes"),
-          cancelTitle: this.$t("no"),
-          cancelVariant: "outline-secondary",
-          hideHeaderClose: false,
-          centered: false,
-        })
+        .msgBoxConfirm(
+          `${this.$t("delete_msg")} -- ( ${data.item.FullName} )`,
+          {
+            title: this.$t("delete_confirm"),
+            size: "md",
+            okVariant: "primary",
+            okTitle: this.$t("yes"),
+            cancelTitle: this.$t("no"),
+            cancelVariant: "outline-secondary",
+            hideHeaderClose: false,
+            centered: false,
+          }
+        )
         .then((value) => {
           value ? this.$emit("deleteItem", data.item.id) : "";
         });

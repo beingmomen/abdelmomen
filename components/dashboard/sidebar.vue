@@ -48,9 +48,24 @@
           icon="fa-heading"
         />
         <MainSidebarLink
+          name="Skills"
+          route="dashboard/skills"
+          icon="fa-bolt"
+        />
+        <MainSidebarLink
           name="Projects"
           route="dashboard/projects"
           icon="fa-diagram-project"
+        />
+        <MainSidebarLink
+          name="Messages"
+          route="dashboard/messages"
+          icon="fa-message"
+        />
+        <MainSidebarLink
+          name="Hire Me"
+          route="dashboard/hire-me"
+          icon="fa-hand-dots"
         />
       </ul>
     </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="app-content content">
-    <AdminProjectsTable
+    <AdminSkillsTable
       @deleteItem="deleteItem"
       :headers="tableHeader"
-      :items="getAllProjectsData"
+      :items="getAllSkillsData"
     />
   </div>
 </template>
@@ -12,11 +12,11 @@
 export default {
   layout: "admin",
   async asyncData({ $fire, store }) {
-    await $fire.firestore
-      .collection("projects")
+    return $fire.firestore
+      .collection("skills")
       .get()
       .then((res) => {
-        store.dispatch("dashboard/projects/getAllDataFromApi", res);
+        store.dispatch("dashboard/skills/getAllDataFromApi", res);
       });
     return {};
   },
@@ -29,8 +29,8 @@ export default {
           sortable: false,
         },
         {
-          key: "Desc",
-          label: "Description",
+          key: "ExperienceYears",
+          label: "Experience Years",
           sortable: false,
         },
         {
@@ -51,16 +51,16 @@ export default {
   },
   methods: {
     deleteItem(id) {
-      this.$fire.firestore.collection("projects").doc(id).delete();
+      this.$fire.firestore.collection("skills").doc(id).delete();
       this.$toast.success("Deleted successfully");
       this.getAllDataFromApi();
     },
     getAllDataFromApi() {
       this.$fire.firestore
-        .collection("projects")
+        .collection("skills")
         .get()
         .then((res) => {
-          this.$store.dispatch("dashboard/projects/getAllDataFromApi", res);
+          this.$store.dispatch("dashboard/skills/getAllDataFromApi", res);
         });
     },
   },

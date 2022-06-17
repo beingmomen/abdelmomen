@@ -1,22 +1,23 @@
 <template>
   <div class="app-content content">
-    <AdminProjectsTable
+    <AdminHireMeTable
       @deleteItem="deleteItem"
       :headers="tableHeader"
-      :items="getAllProjectsData"
+      :items="getAllHireRequestesData"
     />
   </div>
 </template>
 
 <script>
 export default {
+  name: "hireMe",
   layout: "admin",
   async asyncData({ $fire, store }) {
     await $fire.firestore
-      .collection("projects")
+      .collection("hireMe")
       .get()
       .then((res) => {
-        store.dispatch("dashboard/projects/getAllDataFromApi", res);
+        store.dispatch("dashboard/hireMe/getAllDataFromApi", res);
       });
     return {};
   },
@@ -25,17 +26,17 @@ export default {
       tableHeader: [
         {
           key: "Name",
-          label: "Name",
+          label: "Full Name",
           sortable: false,
         },
         {
-          key: "Desc",
-          label: "Description",
+          key: "Email",
+          label: "Email",
           sortable: false,
         },
         {
-          key: "Image",
-          label: "Image",
+          key: "ProjectType",
+          label: "Project Type",
           sortable: false,
         },
         {
@@ -47,20 +48,20 @@ export default {
     };
   },
   mounted() {
-    this.getAllDataFromApi();
+    // this.getAllDataFromApi();
   },
   methods: {
     deleteItem(id) {
-      this.$fire.firestore.collection("projects").doc(id).delete();
+      this.$fire.firestore.collection("hireMe").doc(id).delete();
       this.$toast.success("Deleted successfully");
       this.getAllDataFromApi();
     },
     getAllDataFromApi() {
       this.$fire.firestore
-        .collection("projects")
+        .collection("hireMe")
         .get()
         .then((res) => {
-          this.$store.dispatch("dashboard/projects/getAllDataFromApi", res);
+          this.$store.dispatch("dashboard/hireMe/getAllDataFromApi", res);
         });
     },
   },

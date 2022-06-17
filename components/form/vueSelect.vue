@@ -1,28 +1,43 @@
 <template>
   <b-col :lg="lg" :md="md" :sm="sm" class="mb-1">
     <b-form-group>
-      <validation-provider #default="{ errors }" :name="label" rules="required">
-        <label v-if="notLabel" :class="required ? 'required' : ''">
-          {{ label }}</label
-        >
-        <b-form-input
-          style="height: 35px"
-          v-model="getContent"
-          :placeholder="placeholder"
-          :disabled="disabled"
-        />
-        <small class="text-danger">{{ errors[0] }}</small>
-      </validation-provider>
+      <label v-if="title != 'hid'" :class="{ required: required }">{{
+        title
+      }}</label>
+      <v-select
+        style="height: 35px"
+        v-model="getContent"
+        :reduce="(item) => (notId ? item : item.id)"
+        :label="label"
+        :dir="dashDirection"
+        :clearable="clearable"
+        :options="allData"
+        :disabled="disabled"
+      ></v-select>
     </b-form-group>
   </b-col>
 </template>
 
 <script>
 export default {
+  mounted() {},
   props: {
+    title: {
+      type: String,
+      default: "hid",
+    },
     label: String,
-    module: String,
     storeKey: String,
+    allData: Array,
+    module: String,
+    multiple: {
+      type: Boolean,
+      default: false,
+    },
+    clearable: {
+      type: Boolean,
+      default: false,
+    },
     required: {
       type: Boolean,
       default: false,
@@ -31,9 +46,9 @@ export default {
       type: Boolean,
       default: false,
     },
-    notLabel: {
+    notId: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     lg: {
       type: String,
@@ -47,12 +62,7 @@ export default {
       type: String,
       default: "12",
     },
-    placeholder: {
-      type: String,
-      default: "",
-    },
   },
-  mounted() {},
   data() {
     return {};
   },

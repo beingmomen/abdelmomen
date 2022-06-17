@@ -50,6 +50,9 @@ export default {
         '~/plugins/mixins/ui/layout.js',
         '~/plugins/mixins/dashboard/title.js',
         '~/plugins/mixins/dashboard/projects.js',
+        '~/plugins/mixins/dashboard/skills.js',
+        '~/plugins/mixins/dashboard/messages.js',
+        '~/plugins/mixins/dashboard/hireMe.js',
         // '~/plugins/firebase.js',
     ],
 
@@ -184,6 +187,11 @@ export default {
 
     generate: {
         fallback: true
+    },
+
+    loading: {
+        color: ' #7367f0',
+        height: '4px'
     },
 
 
