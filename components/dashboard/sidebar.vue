@@ -58,6 +58,11 @@
           icon="fa-diagram-project"
         />
         <MainSidebarLink
+          name="Compaines"
+          route="dashboard/companies"
+          icon="fa-building"
+        />
+        <MainSidebarLink
           name="Messages"
           route="dashboard/messages"
           icon="fa-message"

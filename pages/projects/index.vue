@@ -1,6 +1,8 @@
 <template>
   <div class="container">
     <LandingPageProjects :more="false" />
+    <hr />
+    <LandingPageSocial />
   </div>
 </template>
 
@@ -19,4 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+hr {
+  margin-block: 80px;
+}
 </style>

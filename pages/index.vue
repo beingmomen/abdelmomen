@@ -1,8 +1,12 @@
 <template>
   <div>
     <LandingPageHero />
+    <LandingPageAbout />
     <LandingPageSkills />
     <LandingPageProjects :more="true" />
+    <LandingPageCompanies />
+    <hr />
+    <LandingPageSocial />
   </div>
 </template>
 

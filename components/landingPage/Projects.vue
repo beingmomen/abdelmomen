@@ -20,8 +20,6 @@
         More Projects
       </b-button>
     </div>
-    <hr />
-    <LandingPageSocial />
   </b-container>
 </template>
 
@@ -117,8 +115,5 @@ h2 {
   @media (max-width: 575.98px) {
     width: 70%;
   }
-}
-hr {
-  margin-block: 80px;
 }
 </style>

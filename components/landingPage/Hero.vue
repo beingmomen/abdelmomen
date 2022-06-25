@@ -38,15 +38,17 @@
       <b-col lg="8">
         <b-img
           v-if="dashboardMode"
-          src="@/assets/images/developer.svg"
+          :src="require('~/assets/images/developer.svg')"
           fluid
           alt="Fluid image"
+          loading="lazy"
         />
         <b-img
           v-else
-          src="@/assets/images/developer-dark.svg"
+          :src="require('~/assets/images/developer-dark.svg')"
           fluid
           alt="Fluid image"
+          loading="lazy"
         />
       </b-col>
     </b-row>

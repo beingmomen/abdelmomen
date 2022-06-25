@@ -19,7 +19,18 @@ export default {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/zoro.jpg' },
             { rel: 'stylesheet', type: 'image/x-icon', href: '/zoro.jpg' }
-        ]
+        ],
+        script: [
+            {
+                body: true,
+                src: "https://apps.elfsight.com/p/platform.js",
+            },
+            // {
+            //     body: true,
+            //     src: "https://apps.elfsight.com/p/platform.js",
+            // },
+
+        ],
     },
 
     pageTransition: {
@@ -53,6 +64,7 @@ export default {
         '~/plugins/mixins/dashboard/skills.js',
         '~/plugins/mixins/dashboard/messages.js',
         '~/plugins/mixins/dashboard/hireMe.js',
+        '~/plugins/mixins/dashboard/companies.js',
         // '~/plugins/firebase.js',
     ],
 
@@ -87,6 +99,7 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/pwa',
         '@nuxtjs/auth-next',
+        '@nuxt/image',
         "@nuxtjs/i18n",
         'nuxt-vue-select',
         'cookie-universal-nuxt', [

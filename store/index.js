@@ -49,7 +49,14 @@ export const actions = {
             .then((res) => {
                 store.dispatch("dashboard/skills/getAllDataFromApi", res);
             });
-    }
+
+        await $fire.firestore
+            .collection("companies")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/companies/getAllDataFromApi", res);
+            });
+    },
 
 };
 
