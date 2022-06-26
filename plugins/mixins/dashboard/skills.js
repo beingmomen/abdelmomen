@@ -10,6 +10,9 @@ const mixins = {
         },
         getImageFromSkillsPage() {
             return this.$store.getters["dashboard/skills/edit/getImagePreview"]
+        },
+        getSkillsCount() {
+            return this.$store.getters["dashboard/skills/getCount"]
         }
     },
 

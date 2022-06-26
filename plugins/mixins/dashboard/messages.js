@@ -8,6 +8,9 @@ const mixins = {
         getAllMessagesData() {
             return this.$store.getters["dashboard/messages/getAllData"]
         },
+        getMessagesCount() {
+            return this.$store.getters["dashboard/messages/getCount"]
+        }
     },
 
     methods: {},

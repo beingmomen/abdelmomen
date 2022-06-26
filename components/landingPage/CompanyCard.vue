@@ -8,7 +8,7 @@
           <p class="text-center fw-bold fs-5">{{ company.Type }}</p>
           <div class="d-flex justify-content-evenly">
             <p>{{ company.FromDate }}</p>
-            <p>{{ company.ToDate }}</p>
+            <p>{{ company.ToDate || "Current" }}</p>
           </div>
           <div class="text-center">
             <b-button variant="secondary" class="btn-icon mx-3">

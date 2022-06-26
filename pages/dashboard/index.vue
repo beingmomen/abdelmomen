@@ -1,10 +1,15 @@
 <template>
-  <div class="app-content content"></div>
+  <div class="app-content content">
+    <CardsLargeCard />
+  </div>
 </template>
 
 <script>
 export default {
   layout: "admin",
+  data() {
+    return {};
+  },
 };
 </script>
 

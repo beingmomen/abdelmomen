@@ -10,6 +10,9 @@ const mixins = {
         },
         getImageFromProjectPage() {
             return this.$store.getters["dashboard/projects/edit/getImagePreview"]
+        },
+        getProjectsCount() {
+            return this.$store.getters["dashboard/projects/getCount"]
         }
     },
 

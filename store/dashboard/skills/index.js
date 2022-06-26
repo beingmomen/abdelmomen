@@ -5,12 +5,16 @@ export const state = () => ({
         ExperienceYears: null,
     },
     Image: null,
+    Count: null,
 
 });
 
 export const getters = {
     getAllData(state) {
         return state.AllData
+    },
+    getCount(state) {
+        return state.Count
     },
     getName(state) {
         return state.data.Name
@@ -25,6 +29,7 @@ export const getters = {
 
 export const actions = {
     getAllDataFromApi({ commit }, payload) {
+        commit("setCount", payload.size)
         let arr = []
         payload.forEach((doc) => {
             let data = { ...doc.data(), id: doc.id };
@@ -53,6 +58,9 @@ export const actions = {
 export const mutations = {
     setAllData(state, val) {
         state.AllData = val
+    },
+    setCount(state, val) {
+        state.Count = val
     },
     setName(state, val) {
         state.data[val.key] = val.value

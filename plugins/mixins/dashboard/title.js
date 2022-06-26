@@ -11,6 +11,12 @@ const mixins = {
         getOwnerIdForTiltlePage() {
             return this.$store.getters["dashboard/title/getOwnerId"]
         },
+        getOwnerHeaderMixins() {
+            return this.$store.getters["dashboard/title/getOwnerHeader"]
+        },
+        getOwnerHeaderDescMixins() {
+            return this.$store.getters["dashboard/title/getOwnerHeaderDesc"]
+        },
     },
 
     methods: {},

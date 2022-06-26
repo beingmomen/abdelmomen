@@ -144,7 +144,6 @@ export default {
         langDir: 'locales/',
         strategy: 'no_prefix',
         locales: [
-            { code: 'de', iso: 'de-AT', file: 'de', dir: 'ltr' },
             { code: 'ar', iso: 'ar-EG', file: 'ar', dir: 'rtl' },
             { code: 'en', iso: 'en-US', file: 'en', dir: 'ltr' },
         ],

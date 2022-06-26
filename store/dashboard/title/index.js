@@ -62,7 +62,6 @@ export const actions = {
                 })
             });
         }
-
     },
     addToDB({ commit, state, rootState, dispatch }, payload) {
         this.$fire.firestore.collection("heroTitle").add(state.data).then((res) => {

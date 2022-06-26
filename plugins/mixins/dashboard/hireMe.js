@@ -14,6 +14,9 @@ const mixins = {
         getAllHireRequestesData() {
             return this.$store.getters["dashboard/hireMe/getAllData"]
         },
+        getHireMeCount() {
+            return this.$store.getters["dashboard/hireMe/getCount"]
+        }
     },
 
     methods: {},

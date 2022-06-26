@@ -14,21 +14,38 @@
 export default {
   name: "IndexPage",
   async asyncData({ $fire, store }) {
-    return $fire.firestore
+    await $fire.firestore
       .collection("projects")
       .limit(3)
       .get()
       .then((res) => {
         store.dispatch("dashboard/projects/getAllDataFromApi", res);
       });
+
+    await $fire.firestore
+      .collection("heroTitle")
+      .get()
+      .then((res) => {
+        store.dispatch("dashboard/title/getAllDataFromApi", res);
+      });
+
+    await $fire.firestore
+      .collection("skills")
+      .get()
+      .then((res) => {
+        store.dispatch("dashboard/skills/getAllDataFromApi", res);
+      });
+
+    await $fire.firestore
+      .collection("companies")
+      .get()
+      .then((res) => {
+        store.dispatch("dashboard/companies/getAllDataFromApi", res);
+      });
     return {};
   },
   data() {
-    return {
-      projects: [],
-    };
+    return {};
   },
-  mounted() {},
-  methods: {},
 };
 </script>

@@ -10,6 +10,9 @@ const mixins = {
         },
         getImageFromCompanyPage() {
             return this.$store.getters["dashboard/companies/edit/getImagePreview"]
+        },
+        getCompaniesCount() {
+            return this.$store.getters["dashboard/companies/getCount"]
         }
     },
 

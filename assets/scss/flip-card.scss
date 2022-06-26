@@ -44,12 +44,16 @@
 .card__side--front {
   cursor: pointer;
   filter: grayscale(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     filter: grayscale(0);
   }
   img {
-    width: 210px;
-    height: 130px;
+    width: 180px;
+    height: 110px;
+    object-fit: contain;
   }
 }
 .card__side--back {

@@ -16,9 +16,9 @@
           :class="dashboardMode ? 'text-dark' : 'text-light'"
           class="text-uppercase fs-1 fw-bold"
         >
-          hi, iam abdelmomen
+          {{ getOwnerHeaderMixins }}
         </h2>
-        <p class="fs-3 lh-sm fw-bold">A Frontend Developer & Web Developer</p>
+        <p class="fs-3 lh-sm fw-bold">{{ getOwnerHeaderDescMixins }}</p>
 
         <b-button class="download fs-4 mt-5" variant="outline-secondary">
           <arrow-down-circle-icon

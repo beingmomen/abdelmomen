@@ -165,12 +165,6 @@ import {
   AlignJustifyIcon,
 } from "vue-feather-icons";
 export default {
-  async asyncData(context) {
-    console.warn("app refresh", context);
-  },
-  mounted() {
-    console.warn("availableLocales ::::", this.availableLocales);
-  },
   props: ["width"],
   data() {
     return {
@@ -187,27 +181,11 @@ export default {
           img: require("/assets/images/flags/en.png"),
           name: "English",
         },
-        {
-          locale: "de",
-          img: require("/assets/images/flags/de.png"),
-          name: "German",
-        },
       ],
     };
   },
   methods: {
     toggleLayoutCollapsed() {
-      // console.warn("toggle", this.makeLayoutCollapsed);
-
-      // if (this.makeLayoutCollapsed) {
-      //   document.querySelectorAll(".nav-item.has-sub").forEach((x) => {
-      //     x.classList.remove("open");
-      //   });
-      //   console.warn(
-      //     "close :::",
-      //     document.querySelectorAll(".nav-item.has-sub")
-      //   );
-      // }
       this.$store.dispatch("toggleLayoutCollapsed", this.width);
     },
     toggleMode(mode) {
@@ -222,7 +200,6 @@ export default {
       }
     },
     switchLang(lang) {
-      // this.$i18n.setLocale(lang);
       this.currentLang = lang;
       if (lang == "ar") {
         document.documentElement.classList.add("arabic-dir");
@@ -272,16 +249,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .arabic-dir {
-//   .navbar {
-//     left: 0;
-//     right: unset;
-//     .navbar-nav {
-//       margin-left: unset !important;
-//       margin-right: auto !important;
-//     }
-//   }
-// }
 .custom-class {
   color: #6e6b7b;
 }

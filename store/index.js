@@ -51,11 +51,33 @@ export const actions = {
             });
 
         await $fire.firestore
+            .collection("projects")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/projects/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
             .collection("companies")
             .get()
             .then((res) => {
                 store.dispatch("dashboard/companies/getAllDataFromApi", res);
             });
+
+        await $fire.firestore
+            .collection("messages")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/messages/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
+            .collection("hireMe")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/hireMe/getAllDataFromApi", res);
+            });
+
     },
 
 };

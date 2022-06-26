@@ -21,13 +21,13 @@
       <div class="sidenav-overlay"></div>
       <Nuxt />
     </div>
-    <!-- <div v-show="!loading" class="flower-spinner">
+    <div v-show="!loading" class="flower-spinner">
       <div class="dots-container">
         <div class="bigger-dot">
           <div class="smaller-dot"></div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -43,9 +43,9 @@ export default {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
 
-    // setTimeout(() => {
-    //   this.loading = true;
-    // }, 2000);
+    setTimeout(() => {
+      this.loading = true;
+    }, 2000);
   },
   data() {
     return {
@@ -53,7 +53,7 @@ export default {
         width: 0,
         height: 0,
       },
-      loading: true,
+      loading: false,
     };
   },
   computed: {},
