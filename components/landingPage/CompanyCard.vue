@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center flex-wrap">
     <div v-for="company in allData" :key="company.id" class="artboard">
       <div class="card">
         <div class="card__side card__side--back p-2">

@@ -7,7 +7,7 @@
       toggleable="md"
     >
       <b-nav class="py-md-3 py-1" align="left">
-        <li v-if="!dashboardMode" class="nav-item">
+        <!-- <li v-if="!dashboardMode" class="nav-item">
           <nuxt-link to="/" class="nav-link nav-logo">
             <img src="~/assets/images/logo-light.svg" alt="logo" />
           </nuxt-link>
@@ -15,6 +15,11 @@
         <li v-else class="nav-item">
           <nuxt-link to="/" class="nav-link nav-logo">
             <img src="~/assets/images/logo-dark.svg" alt="logo" />
+          </nuxt-link>
+        </li> -->
+        <li class="nav-item">
+          <nuxt-link to="/" class="nav-link nav-logo">
+            <img src="~/assets/images/code.png" alt="logo" />
           </nuxt-link>
         </li>
       </b-nav>
@@ -206,9 +211,9 @@ export default {
 
 <style lang="scss" scoped>
 .nav-logo {
-  width: 155px;
+  width: 100px;
   @media (max-width: 300.98px) {
-    width: 115px;
+    width: 70px;
   }
   img {
     width: 100%;
