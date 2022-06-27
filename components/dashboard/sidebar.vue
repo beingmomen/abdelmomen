@@ -13,7 +13,7 @@
         <li class="nav-item mr-auto">
           <nuxt-link to="/dashboard" class="navbar-brand router-link-active">
             <span class="brand-logo">
-              <img src="/img/logo.svg" alt="logo" />
+              <img src="~/assets/images/code.png" alt="logo" />
             </span>
             <h2 class="brand-text">Abdelmo’men</h2>
           </nuxt-link>
