@@ -17,8 +17,8 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/zoro.jpg' },
-            { rel: 'stylesheet', type: 'image/x-icon', href: '/zoro.jpg' }
+            { rel: 'icon', type: 'image/x-icon', href: '/code.png' },
+            { rel: 'stylesheet', type: 'image/x-icon', href: '/code.png' }
         ],
         script: [
             {

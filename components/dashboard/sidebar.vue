@@ -38,7 +38,7 @@
       <ul class="navigation navigation-main">
         <MainSidebarLink
           :name="$t(`sidebar.dashboard`)"
-          route="dashboard"
+          route="dashboard/"
           icon="fa-house"
         />
         <MainSidebarBreakLink />
