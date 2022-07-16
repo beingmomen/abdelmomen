@@ -1,4 +1,3 @@
-export default async function({ app, redirect, store, $auth }) {
-
+export default async function ({ redirect, $auth }) {
     if ($auth.$state.loggedIn) redirect("/dashboard")
 }

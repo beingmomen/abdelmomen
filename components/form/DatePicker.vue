@@ -1,12 +1,29 @@
 <template>
   <b-col :lg="lg" :md="md" :sm="sm" class="mt-1">
     <b-form-group>
-      <label :class="required ? 'required' : ''"> {{ label }}</label>
-      <b-form-input
-        style="height: 35px"
-        v-model="getContent"
-        :disabled="disabled"
-      />
+      <label :class="required ? 'required' : ''">{{ title }}</label>
+      <b-input-group class="mb-1 flex-row-reverse">
+        <b-form-input
+          style="height: 35px"
+          id="example-input"
+          v-model="getContent"
+          type="text"
+          placeholder="YYYY-MM-DD"
+          autocomplete="off"
+          show-decade-nav
+        />
+        <b-input-group-append style="height: 35px">
+          <b-form-datepicker
+            v-model="getContent"
+            show-decade-nav
+            button-only
+            right
+            locale="en-US"
+            aria-controls="example-input"
+            @context="onContext"
+          />
+        </b-input-group-append>
+      </b-input-group>
     </b-form-group>
   </b-col>
 </template>
@@ -14,14 +31,10 @@
 <script>
 export default {
   props: {
-    label: String,
+    title: String,
     module: String,
     storeKey: String,
     required: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
       type: Boolean,
       default: false,
     },
@@ -50,6 +63,9 @@ export default {
         });
       },
     },
+  },
+  methods: {
+    onContext() {},
   },
 };
 </script>

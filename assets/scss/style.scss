@@ -4,66 +4,10 @@ NOTE:
 ------
 PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
-@import "@core/scss/vue/libs/vue-select.scss";
-a {
-  color: unset !important;
-  text-decoration: none !important;
-}
-a:hover {
-  text-decoration: none;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.customise-table {
-  .table {
-    tr {
-      td {
-        // padding: 0 !important;
-        position: relative;
-        .table-link {
-          color: unset !important;
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          // padding: 1rem;
-          &:hover {
-            color: unset !important;
-          }
-        }
-      }
-    }
-  }
-}
-
-.dark-mode-text {
-  color: #1e3851 !important;
-}
-
-.light-mode-text {
-  color: #fff !important;
-}
-
-.nav-item {
-  .nav-link {
-    &:hover {
-      color: #7367f0 !important;
-    }
-  }
-}
-
-button:focus {
-  box-shadow: none !important;
-}
-
-.main-menu {
-  .nav-item.active {
-    a.nuxt-link-active {
-      color: #fff !important;
-    }
-  }
-}
+@import "/@core/scss/vue/pages/page-auth.scss";
+@import "./files/transition";
+@import "./files/reset.scss";
+@import "./files/sidebar";
+@import "./files/spinner";
+@import "./files/toastification__toast";
+@import "./files/navbar";

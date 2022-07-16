@@ -18,7 +18,7 @@
       <b-form-group
         label="Filter"
         label-cols-sm="3"
-        label-align-sm="right"
+        label-align-sm="right" 
         label-size="sm"
         label-for="filterInput"
         class="mb-0"

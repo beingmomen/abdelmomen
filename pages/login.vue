@@ -3,7 +3,7 @@
     <b-row class="auth-inner m-0">
       <!-- Brand logo-->
       <b-link class="brand-logo">
-        <MainLogo />
+        <img src="/img/logo.svg" alt="logo" />
         <h2 class="brand-text text-primary ml-1">Vuexy</h2>
       </b-link>
       <!-- /Brand logo-->
@@ -13,7 +13,11 @@
         <div
           class="w-100 d-lg-flex align-items-center justify-content-center px-5"
         >
-          <b-img fluid :src="imgUrl" alt="Login V2" />
+          <b-img
+            fluid
+            :src="require('~/assets/images/pages/login-v2.svg')"
+            alt="Login V2"
+          />
         </div>
       </b-col>
       <!-- /Left Text-->
@@ -35,15 +39,7 @@
                   ><span class="font-weight-bold"
                     >{{ $t("login.admin") }}:</span
                   >
-                  admin@demo.com | admin</small
-                >
-              </p>
-              <p>
-                <small class="mr-50"
-                  ><span class="font-weight-bold"
-                    >{{ $t("login.client") }}:</span
-                  >
-                  client@demo.com | client</small
+                  admin@admin.com | password</small
                 >
               </p>
             </div>
@@ -91,7 +87,7 @@
                     <label for="login-password">{{
                       $t("inputs.password")
                     }}</label>
-                    <nuxt-link :to="{ name: 'auth-forgot-password' }">
+                    <nuxt-link to="/auth/forgot-password">
                       <small>{{ $t("inputs.forget") }}</small>
                     </nuxt-link>
                   </div>
@@ -135,7 +131,7 @@
 
           <b-card-text class="text-center mt-3">
             <span>{{ $t("login.new_platform") }} </span>
-            <nuxt-link :to="{ name: 'auth-register' }">
+            <nuxt-link to="/auth/register">
               <span>{{ $t("login.new_account") }}</span>
             </nuxt-link>
           </b-card-text>
@@ -149,6 +145,7 @@
 import { HelpCircleIcon, EyeIcon, CoffeeIcon } from "vue-feather-icons";
 
 export default {
+  name: "login",
   layout: "auth",
   data() {
     return {
@@ -156,11 +153,6 @@ export default {
         email: "admin@admin.com",
         password: "password",
       },
-      status: "",
-      password: "admin",
-      userEmail: "admin@demo.com",
-      sideImg: require("~/assets/images/pages/login-v2.svg"),
-      // assets/images/pages/login-v2.svg
     };
   },
   methods: {
@@ -169,7 +161,9 @@ export default {
         let res = await this.$auth.loginWith("local", {
           data: this.login,
         });
+
         let position = this.$i18n.locale == "en" ? "top-right" : "top-left";
+
         this.$toast(`Welcome ${res.data.email}`, {
           hideProgressBar: true,
           position,
@@ -178,18 +172,8 @@ export default {
           showCloseButtonOnHover: true,
         });
       } catch (err) {
-        console.warn("err.response ::::", err.response);
+        this.$toast.error(err.response.data.error.message);
       }
-    },
-  },
-  computed: {
-    imgUrl() {
-      // if (this.$store.appConfig.state.layout.skin === "dark") {
-      //   // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-      //   this.sideImg = require("~/assets/images/pages/login-v2-dark.svg");
-      //   return this.sideImg;
-      // }
-      return this.sideImg;
     },
   },
   components: {
@@ -199,23 +183,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.Vue-Toastification__toast.Vue-Toastification__toast--default.top-right,
-.Vue-Toastification__toast.Vue-Toastification__toast--default.top-left {
-  background-color: #fff;
-  .Vue-Toastification__toast-body {
-    color: #7367f0;
-    margin-top: 5px;
-  }
-  svg {
-    color: #7367f0;
-  }
-  button {
-    color: #7367f0;
-  }
-}
-.Vue-Toastification__container.top-left {
-  direction: ltr;
-}
-</style>

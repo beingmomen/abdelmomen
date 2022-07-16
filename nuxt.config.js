@@ -1,14 +1,14 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'Abdelmo’men',
+        title: 'Vuxy-Nuxt',
         htmlAttrs: {
             lang: 'en',
-            dir: "",
-            class: ''
+            dir: "ltr",
+            class: 'english-dir'
         },
         bodyAttrs: {
-            class: 'dark-layout'
+            class: 'light-layout'
         },
         meta: [
             { charset: 'utf-8' },
@@ -17,20 +17,9 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/code.png' },
-            { rel: 'stylesheet', type: 'image/x-icon', href: '/code.png' }
-        ],
-        script: [
-            {
-                body: true,
-                src: "https://apps.elfsight.com/p/platform.js",
-            },
-            // {
-            //     body: true,
-            //     src: "https://apps.elfsight.com/p/platform.js",
-            // },
-
-        ],
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', type: 'image/x-icon', href: '/favicon.ico' }
+        ]
     },
 
     pageTransition: {
@@ -43,29 +32,20 @@ export default {
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
+        '~/assets/css/bootstrap.min.css',
         '~/@core/scss/core.scss',
+        '@fortawesome/fontawesome-svg-core/styles.css',
+        // '~/assets/css/bootstrap.rtl.min.css',
         '~/assets/scss/rtl.scss',
-        '~/assets/scss/transition.scss',
         '~/assets/scss/style.scss',
-        '~/assets/scss/fonts.scss',
-        '~/assets/scss/bootstrap.min.css',
-        '@fortawesome/fontawesome-svg-core/styles.css'
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        '~/plugins/components/fontawesome.js',
-        "~plugins/components/vee-validate.js",
-        '~/plugins/mixins/ui/forms.js',
-        '~/plugins/mixins/ui/transition.js',
-        '~/plugins/mixins/ui/layout.js',
-        '~/plugins/mixins/dashboard/title.js',
-        '~/plugins/mixins/dashboard/projects.js',
-        '~/plugins/mixins/dashboard/skills.js',
-        '~/plugins/mixins/dashboard/messages.js',
-        '~/plugins/mixins/dashboard/hireMe.js',
-        '~/plugins/mixins/dashboard/companies.js',
-        // '~/plugins/firebase.js',
+        '~/plugins/settings/fontawesome.js',
+        "~/plugins/settings/vee-validate.js",
+        '~/plugins/settings/layout.js',
+        '~/plugins/settings/firebase.js',
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -73,23 +53,8 @@ export default {
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
-
-        // '@nuxtjs/google-fonts',
     ],
 
-    // googleFonts: {
-    //     families: {
-    //         Cairo: true,
-    //         'Josefin+Sans': true,
-    //         Lato: [100, 300],
-    //         Raleway: {
-    //             wght: [100, 400],
-    //             ital: [100]
-    //         },
-    //     },
-    //     // display: 'swap',
-    //     download: true
-    // },
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
@@ -97,11 +62,8 @@ export default {
         'bootstrap-vue/nuxt',
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
-        '@nuxtjs/pwa',
         '@nuxtjs/auth-next',
-        '@nuxt/image',
         "@nuxtjs/i18n",
-        'nuxt-vue-select',
         'cookie-universal-nuxt', [
             "vue-toastification/nuxt",
             {
@@ -138,25 +100,15 @@ export default {
         ]
     ],
 
-
     i18n: {
         lazy: true,
         langDir: 'locales/',
-        strategy: 'no_prefix',
+        // strategy: 'no_prefix',   use it when tou won’t prefix in route 
         locales: [
             { code: 'ar', iso: 'ar-EG', file: 'ar', dir: 'rtl' },
             { code: 'en', iso: 'en-US', file: 'en', dir: 'ltr' },
         ],
         defaultLocale: 'en',
-        // parsePages: false,
-        // pages: {
-        //     dashboard: false
-        // },
-        // detectBrowserLanguage: {
-        //     useCookie: true,
-        //     cookieKey: 'i18n_redirected',
-        //     redirectOn: 'root',  // recommended
-        // }
 
     },
 
@@ -167,7 +119,7 @@ export default {
                     property: 'idToken',
                 },
                 endpoints: {
-                    login: { url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD9L-CLiD5t7FgnWaldEPT5-yuJ4xhKt0o                    `, method: "post" },
+                    login: { url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAd81BzrVH1na5-xuVw5sBT9at4rqjIBkE`, method: "post" },
                     user: false
                 },
             },
@@ -179,16 +131,21 @@ export default {
             home: '/dashboard'
         }
     },
+
     pwa: {
         icon: {
-            fileName: 'zoro.jpg',
+            fileName: 'code.png',
         },
         manifest: {
-            name: 'Abdelmomen Portfolio',
-            short_name: 'Abdelmomen',
+            name: 'Abdelmo’men Portfolio',
+            short_name: 'Abdelmo’men',
             lang: 'en',
             display: 'standalone',
         },
+    },
+
+    generate: {
+        fallback: true
     },
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -196,16 +153,6 @@ export default {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
         baseURL: '/',
     },
-
-    generate: {
-        fallback: true
-    },
-
-    loading: {
-        color: ' #7367f0',
-        height: '4px'
-    },
-
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},

@@ -1,0 +1,18 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.auth-wrapper {
+  .brand-logo {
+    width: 185px;
+    img {
+      width: 60px;
+    }
+  }
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #7367f0;
+  background-color: rgba(115, 103, 240, 0.12);
+}

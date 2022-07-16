@@ -16,9 +16,12 @@
         v-for="(child, i) in child"
         :key="i"
         class="nav-item"
-        :class="{ active: $route.path == `/${child.route}` }"
+        :class="{ active: $route.path == child.route }"
       >
-        <nuxt-link :to="`/${child.route}`" class="d-flex align-items-center">
+        <nuxt-link
+          :to="localePath(child.route)"
+          class="d-flex align-items-center"
+        >
           <circle-icon size="1.5x" class="custom-class"></circle-icon>
           <span class="menu-title text-truncate" v-text="child.name"></span>
         </nuxt-link>

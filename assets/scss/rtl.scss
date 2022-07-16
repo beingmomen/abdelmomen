@@ -90,9 +90,6 @@
         }
       }
       .app-content {
-        @media (max-width: 1199.98px) {
-          margin-right: 0;
-        }
         margin-right: 260px;
         margin-left: unset;
         text-align: right;
@@ -130,6 +127,10 @@
       .brand-logo {
         left: unset;
         right: 2rem;
+        width: 185px;
+        img {
+          width: 60px;
+        }
       }
       .auth-bg {
         text-align: right;
@@ -167,25 +168,6 @@
         }
       }
     }
-    .modal-content {
-      .modal-header {
-        .close {
-          margin-left: -1.4rem !important;
-          margin-right: auto !important;
-          transform: translate(-8px, -2px);
-        }
-      }
-      .modal-body {
-        text-align: right !important;
-      }
-    }
-    // .v-select {
-    //   ul {
-    //     li {
-    //       text-align: right !important;
-    //     }
-    //   }
-    // }
   }
   .mr-auto {
     margin-left: auto !important;
@@ -212,6 +194,11 @@
 
   .ml-50,
   .mx-50 {
+    margin-left: unset !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .ms-2 {
     margin-left: unset !important;
     margin-right: 0.5rem !important;
   }
