@@ -17,8 +17,8 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/img/code.png' },
+            { rel: 'stylesheet', type: 'image/x-icon', href: '/img/code.png' }
         ]
     },
 
@@ -45,7 +45,12 @@ export default {
         '~/plugins/settings/fontawesome.js',
         "~/plugins/settings/vee-validate.js",
         '~/plugins/settings/layout.js',
-        '~/plugins/settings/firebase.js',
+        '~/plugins/mixins/dashboard/title.js',
+        '~/plugins/mixins/dashboard/projects.js',
+        '~/plugins/mixins/dashboard/skills.js',
+        '~/plugins/mixins/dashboard/messages.js',
+        '~/plugins/mixins/dashboard/hireMe.js',
+        '~/plugins/mixins/dashboard/companies.js',
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -64,6 +69,7 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/auth-next',
         "@nuxtjs/i18n",
+        'nuxt-vue-select',
         'cookie-universal-nuxt', [
             "vue-toastification/nuxt",
             {

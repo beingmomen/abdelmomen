@@ -1,8 +1,9 @@
 export const state = () => ({
+    token: null,
     layoutCollapsed: true,
     sidebar: false,
     mode: true,
-    dashDir: "ltr"
+    dashDir: "rtl"
 });
 
 export const getters = {
@@ -40,7 +41,44 @@ export const actions = {
         } else {
             commit("setDashDir", "ltr")
         }
-    }
+    },
+    async nuxtServerInit({ commit }, { $fire, store }) {
+        await $fire.firestore
+            .collection("skills")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/skills/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
+            .collection("projects")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/projects/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
+            .collection("companies")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/companies/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
+            .collection("messages")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/messages/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
+            .collection("hireMe")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/hireMe/getAllDataFromApi", res);
+            });
+
+    },
 
 };
 

@@ -1,0 +1,96 @@
+.artboard {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  height: 100%;
+  position: relative;
+}
+@media (max-width: 37.5em) {
+  .artboard {
+    padding: 1rem;
+  }
+}
+
+.card {
+  flex: initial;
+  position: relative;
+  height: 10rem;
+  border: none;
+  box-shadow: none;
+  width: 20rem;
+  -moz-perspective: 200rem;
+  perspective: 200rem;
+  margin: 2rem;
+  background-color: unset !important;
+}
+.card__side {
+  height: 14em;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  /* We don't want to see the back part of the element. */
+  backface-visibility: hidden;
+  /* We don't want to see the back part of the element. */
+  border-radius: 3px;
+  overflow: hidden;
+  /* The image is overflowing the parent. */
+  // box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+}
+.card__side--front {
+  cursor: pointer;
+  filter: grayscale(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    filter: grayscale(0);
+  }
+  img {
+    width: 180px;
+    height: 110px;
+    object-fit: contain;
+  }
+}
+.card__side--back {
+  background-color: unset !important;
+  transform: rotateY(180deg);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
+  transition-property: transform;
+  transition-delay: 0.5s;
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+  transition-property: transform;
+  transition-delay: 0.5s;
+}
+
+@media only screen and (max-width: 37.5em), only screen and (hover: none) {
+  .card {
+    height: auto;
+    border-radius: 3px;
+    background-color: #fff;
+    // box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+  }
+  .card__side {
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
+  .card__side--front {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+  .card__side--back {
+    transform: rotateY(0);
+  }
+  .card:hover .card__side--front {
+    transform: rotateY(0);
+  }
+}

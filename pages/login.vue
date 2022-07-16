@@ -3,8 +3,8 @@
     <b-row class="auth-inner m-0">
       <!-- Brand logo-->
       <b-link class="brand-logo">
-        <img src="/img/logo.svg" alt="logo" />
-        <h2 class="brand-text text-primary ml-1">Vuexy</h2>
+        <img src="/img/code.png" alt="logo" />
+        <h2 class="brand-text text-primary ml-1">Abdelmo’men</h2>
       </b-link>
       <!-- /Brand logo-->
 
@@ -31,25 +31,6 @@
           <b-card-text class="mb-2">
             {{ $t("login.please") }}
           </b-card-text>
-
-          <b-alert variant="primary" show>
-            <div class="alert-body font-small-2">
-              <p>
-                <small class="mr-50"
-                  ><span class="font-weight-bold"
-                    >{{ $t("login.admin") }}:</span
-                  >
-                  admin@admin.com | password</small
-                >
-              </p>
-            </div>
-            <help-circle-icon
-              v-b-tooltip.hover.left="`${$t('login.tooltip')}`"
-              style="top: 10; right: 10"
-              size="1.5x"
-              class="custom-class position-absolute"
-            ></help-circle-icon>
-          </b-alert>
 
           <!-- form -->
           <ValidationObserver v-slot="{ handleSubmit, invalid }">

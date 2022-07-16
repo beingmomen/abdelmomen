@@ -22,7 +22,7 @@
       <AdminSidebar :width="window.width" />
       <div class="sidenav-overlay"></div>
       <Nuxt />
-      <AdminFooter />
+      <!-- <AdminFooter /> -->
     </div>
     <div v-show="!loading" class="flower-spinner">
       <div class="dots-container">

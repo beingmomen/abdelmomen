@@ -2,7 +2,7 @@
   <b-col :lg="lg" :md="md" :sm="sm" class="mt-1">
     <b-form-group>
       <label :class="required ? 'required' : ''">{{ title }}</label>
-      <b-input-group class="mb-1 flex-row-reverse">
+      <b-input-group class="mb-1 flex-row-revers">
         <b-form-input
           style="height: 35px"
           id="example-input"

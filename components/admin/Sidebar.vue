@@ -16,9 +16,9 @@
             class="navbar-brand router-link-active"
           >
             <span class="brand-logo">
-              <img src="/img/logo.svg" alt="logo" />
+              <img src="/img/code.png" alt="logo" />
             </span>
-            <h2 class="brand-text">Vuexy</h2>
+            <h2 class="brand-text">Abdelmo’men</h2>
           </nuxt-link>
         </li>
         <li class="nav-item nav-toggle">
@@ -41,20 +41,39 @@
       <ul class="navigation navigation-main">
         <MainSidebarLink
           :name="$t(`sidebar.dashboard`)"
-          route="/dashboard"
+          route="/dashboard/"
           icon="fa-house"
         />
         <MainSidebarBreakLink />
         <MainSidebarLink
-          :name="$t(`sidebar.email`)"
-          route="/dashboard/email"
-          icon="fa-envelope"
+          name="Title"
+          route="/dashboard/title"
+          icon="fa-heading"
         />
-        <MainSidebarGroupLink
-          :page="$t(`sidebar.eCommerce`)"
-          :childNumber="true"
-          :child="returnDashboardChild"
-          icon="fa-cart-shopping"
+        <MainSidebarLink
+          name="Skills"
+          route="/dashboard/skills"
+          icon="fa-bolt"
+        />
+        <MainSidebarLink
+          name="Projects"
+          route="/dashboard/projects"
+          icon="fa-diagram-project"
+        />
+        <MainSidebarLink
+          name="Compaines"
+          route="/dashboard/companies"
+          icon="fa-building"
+        />
+        <MainSidebarLink
+          name="Messages"
+          route="/dashboard/messages"
+          icon="fa-message"
+        />
+        <MainSidebarLink
+          name="Hire Me"
+          route="/dashboard/hire-me"
+          icon="fa-hand-dots"
         />
       </ul>
     </div>
