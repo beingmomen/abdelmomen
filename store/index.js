@@ -44,6 +44,13 @@ export const actions = {
     },
     async nuxtServerInit({ commit }, { $fire, store }) {
         await $fire.firestore
+            .collection("heroTitle")
+            .get()
+            .then((res) => {
+                store.dispatch("dashboard/title/getAllDataFromApi", res);
+            });
+
+        await $fire.firestore
             .collection("skills")
             .get()
             .then((res) => {
@@ -52,6 +59,7 @@ export const actions = {
 
         await $fire.firestore
             .collection("projects")
+            .limit(3)
             .get()
             .then((res) => {
                 store.dispatch("dashboard/projects/getAllDataFromApi", res);
@@ -59,6 +67,7 @@ export const actions = {
 
         await $fire.firestore
             .collection("companies")
+            .orderBy("createdAt", "asc")
             .get()
             .then((res) => {
                 store.dispatch("dashboard/companies/getAllDataFromApi", res);
