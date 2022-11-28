@@ -73,7 +73,7 @@ export default {
         'cookie-universal-nuxt', [
             "vue-toastification/nuxt",
             {
-                timeout: 3000,
+                timeout: 4000,
                 draggable: false,
                 position: "top-center",
             },
