@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Vuxy-Nuxt",
+    title: "Beingmomen",
     htmlAttrs: {
       lang: "en",
       dir: "ltr",
@@ -21,7 +21,6 @@ export default {
       { rel: "stylesheet", type: "image/x-icon", href: "/img/code.png" },
     ],
     script: [
-      // ...
       {
         hid: "tawk.to",
         src: "https://embed.tawk.to/64b6839d94cf5d49dc6453f0/1h5kf47v7",
