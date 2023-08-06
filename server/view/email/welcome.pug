@@ -1,0 +1,17 @@
+extends baseEmail
+
+block content
+  p مرحبا بك #{firstName},
+  p مرحبا بك فى #{website} يسعدنا وجودك معنا  🎉🙏 
+  p نحن جميعًا عائلة معا هنا ، لذا تأكد من تحميل صورة المستخدم الخاصة بك حتى نتعرف عليك بشكل أفضل قليلاً!
+  table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+    tbody
+      tr
+        td(align='left')
+          table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+            tbody
+              tr
+                td
+                  a(href=`${url}`, target='_blank') قم بتحميل صورتك
+  p إذا كنت بحاجة إلى أي مساعدة بخصوص اى معلومات ، فلا تتردد في الاتصال بنا
+  p #{manager}

@@ -1,10 +1,12 @@
+
 <template>
-  <Nuxt />
+  <div>
+    <slot />
+  </div>
 </template>
 
-<script>
-export default {
-  name: "auth",
-  middleware: ["login", "mode", "lang"],
-};
+<script lang="ts" setup>
 </script>
+
+
+<style scoped></style>

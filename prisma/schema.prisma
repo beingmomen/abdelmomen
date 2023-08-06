@@ -1,0 +1,218 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["fullTextSearch"]
+  // previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  slug            String
+  email           String  @unique
+  role            Role    @default(USER)
+  name            String
+  password        String
+  passwordConfirm String
+  image           String
+  country         String?
+  phone           String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  passwordResetToken   String?
+  passwordResetExpires Int?
+}
+
+enum Role {
+  USER
+  MODERATOR
+  ADMIN
+  DEV
+}
+
+model Activity {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  slug  String
+  name  String @unique
+  image String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  coaches       Coach[]
+  championships Championship[]
+  moderators    Moderator[]
+  Belt          Belt[]
+  Player        Player[]
+  Event         Event[]
+}
+
+model Coach {
+  id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  slug  String
+  name  String   @unique
+  date  DateTime
+  image String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  activity   Activity? @relation(fields: [activityId], references: [id])
+  activityId String?   @db.ObjectId
+}
+
+model Championship {
+  id   String   @id @default(auto()) @map("_id") @db.ObjectId
+  slug String
+  name String   @unique
+  date DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  activity   Activity? @relation(fields: [activityId], references: [id])
+  activityId String?   @db.ObjectId
+
+  Player Player[]
+}
+
+model Moderator {
+  id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  slug  String
+  name  String   @unique
+  date  DateTime
+  image String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  activity   Activity? @relation(fields: [activityId], references: [id])
+  activityId String?   @db.ObjectId
+}
+
+model Color {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  slug  String
+  name  String @unique
+  color String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Belt Belt[]
+}
+
+model Belt {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  slug  String
+  name  String @unique
+  image String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  activity   Activity? @relation(fields: [activityId], references: [id])
+  activityId String?   @db.ObjectId
+
+  color   Color?    @relation(fields: [colorId], references: [id])
+  colorId String?   @db.ObjectId
+  BeltRef BeltRef[]
+}
+
+model Player {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  slug       String
+  name       String    @unique
+  nationalId String    @unique
+  fileNumber String    @unique
+  birthDate  DateTime
+  image      String
+  belts      BeltRef[] // Updated to an array of BeltRef objects
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  activity   Activity? @relation(fields: [activityId], references: [id])
+  activityId String?   @db.ObjectId
+
+  championship   Championship? @relation(fields: [championshipId], references: [id])
+  championshipId String?       @db.ObjectId
+}
+
+// New model for the array of belts
+model BeltRef {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  main     Boolean
+  title    String?
+  date     DateTime
+  belt     Belt     @relation(fields: [beltId], references: [id])
+  beltId   String   @db.ObjectId
+  Player   Player   @relation(fields: [playerId], references: [id])
+  playerId String   @db.ObjectId
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+model Event {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  slug        String
+  name        String     @unique
+  date        DateTime
+  image       String
+  type        String
+  description String
+  images      String[]
+  videos      EventRef[] // Updated to an array of BeltRef objects
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  activity   Activity? @relation(fields: [activityId], references: [id])
+  activityId String?   @db.ObjectId
+}
+
+model EventRef {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  url   String
+  title String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  Event   Event  @relation(fields: [eventId], references: [id])
+  eventId String @db.ObjectId
+}
+
+model MediaType {
+  id         String       @id @default(auto()) @map("_id") @db.ObjectId
+  slug       String
+  name       String       @unique
+  image      String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @default(now()) @updatedAt
+  MultiMedia MultiMedia[]
+}
+
+model MultiMedia {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  slug     String
+  name     String @unique
+  videoUrl String
+  image    String
+
+  mediaType   MediaType? @relation(fields: [mediaTypeId], references: [id])
+  mediaTypeId String?    @db.ObjectId
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}

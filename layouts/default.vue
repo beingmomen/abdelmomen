@@ -1,17 +1,40 @@
+
+
 <template>
-  <div class="layout-default pb-5">
-    <LandingPageNavbar />
-    <Nuxt />
-    <!-- <div class="elfsight-app-2d4911cd-2d77-4310-9f09-465137d9d6fa"></div> -->
-    <div class="elfsight-app-7bb48e03-7147-4340-a7d4-921c7ae5a80f"></div>
+  <div
+    class="full-layout min-h-screen flex gap-6"
+    :class="[toggleSidebar, positionSidebar]"
+  >
+    <div class="overlay absolute" @click="closeSidebar"></div>
+
+    <UiTheFullSidebar @closeSidebar="closeSidebar" />
+
+    <div class="grow">
+      <div class="container mx-auto pe-5 ps-5 sm:ps-0">
+        <UiTheNavbar />
+        <slot />
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  middleware: ["mode", "lang"],
+<script lang="ts" setup>
+const sidebar = useToggleSidebar();
+const fixedSidebar = useFixedSidebar();
+
+const closeSidebar = () => {
+  fixedSidebar.value = true;
 };
+
+const toggleSidebar = computed(() =>
+  sidebar.value ? "full-sidebar" : "small-sidebar"
+);
+const positionSidebar = computed(() =>
+  fixedSidebar.value ? "static-sidebar" : "fixed-sidebar"
+);
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style scoped></style>
+
+
+

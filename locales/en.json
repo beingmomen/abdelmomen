@@ -1,46 +1,87 @@
 {
-  "login": {
-    "welcome": "Welcome to Vuexy!",
-    "please": "Please sign-in to your account and start the adventure",
-    "admin": "Admin",
-    "client": "Client",
-    "tooltip": "This is just for ACL demo purpose",
-    "new_platform": "New on our platform?",
-    "new_account": "Create an account"
-  },
-  "sidebar": {
-    "dashboard": "Dashboard",
-    "email": "Email",
-    "eCommerce": "eCommerce",
-    "analytics": "Analytics",
-    "apps": "Apps",
-    "pages": "Pages"
-  },
-  "navbar": {
-    "arabic": "Arabic",
-    "english": "English",
-    "german": "German",
-    "admin": "Admin",
-    "profile": "Profile",
-    "setting": "Settings",
-    "logout": "Logout"
-  },
-  "footer": {
-    "copyright": "COPYRIGHT © 2022",
-    "all": "All rights Reserved ,",
-    "link": "Pixinvent",
-    "end": "Hand-crafted & Made with"
-  },
-  "inputs": {
-    "email": "ُEmail",
-    "password": "Password",
-    "forget": "Forgot Password?"
-  },
-  "buttons": {
-    "login": "Sign in",
-    "logout": "Sign Up"
-  },
-  "tables": {
-    "per_page": "Per Page"
-  }
+  "start": "Hello",
+  "home": "Home",
+  "activities": "Activities",
+  "activity": "Activity",
+  "championships": "Championships",
+  "championship": "Championship",
+  "coaches": "Coaches",
+  "coach": "Coach",
+  "moderators": "Moderators",
+  "moderator": "Moderator",
+  "colors": "Colors",
+  "color": "Color",
+  "belts": "Belts",
+  "belt": "Belt",
+  "players": "Players",
+  "player": "Player",
+  "events": "Events",
+  "event": "Event",
+  "mediaTypes": "Media Types",
+  "mediaType": "Media Type",
+  "multiMedia": "Multi Media",
+  "create": "Create",
+  "update": "Update",
+  "name": "Name",
+  "date": "Date",
+  "arabic": "Arabic",
+  "english": "English",
+  "profile": "Profile",
+  "logout": "Logout",
+  "edit": "Edit",
+  "delete": "Delete",
+  "actions": "Actions",
+  "add": "Add",
+  "search": "Search",
+  "eventType": "Event type",
+  "description": "Description",
+  "videos": "Videos",
+  "video": "Video",
+  "videoUrl": "Video URL",
+  "videoTitle": "Video Title",
+  "delConfirm": "Are you sure you want to delete this item ?",
+  "lastBelt": "Last belt",
+  "birthDate": "Birth date",
+  "fileNumber": "File number",
+  "nationalId": "National ID",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "image": "Image",
+  "images": "Images",
+  "startDate": "Start Date",
+  "loading": "Loading",
+  "noItems": "No Items",
+  "canCreate": "You can create",
+  "canUpdate": "You can update",
+  "select": "Select",
+  "yourAccount": "to your account",
+  "signIn": "Sign in",
+  "signUp": "Sign up",
+  "emailAddress": "Email address",
+  "password": "Password",
+  "passwordConfirm": "Password Confirm",
+  "newOnOurPlatform": "New on our platform?",
+  "createAnAccount": "Create an account",
+  "signInInstead": "Sign in instead",
+  "alreadyHaveAnAccount": "Already have an account?",
+  "forgetPassword": "Forgot Password?",
+  "send": "Send",
+  "reset": "Reset",
+  "admins": "Admins",
+  "users": "Users",
+  "user": "User",
+  "changeRole": "Change role",
+  "role": "Role",
+  "email": "Email",
+  "clickHere": "Click here",
+  "resetPassword": "Reset Password",
+  "filterBy": "Filter by",
+  "backToLogin": "Back To Login"
+
+
+
+
+  
+
+  
 }

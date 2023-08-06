@@ -1,0 +1,24 @@
+.delete-modal {
+  .fixed {
+    .flex {
+      align-items: flex-start !important;
+    }
+  }
+}
+
+.icon-size {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.datepicker-custom {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  label {
+    opacity: 0;
+    height: 100%;
+  }
+}

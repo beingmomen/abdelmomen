@@ -1,46 +1,86 @@
 {
-  "login": {
-    "welcome": "مرحبا بك فى Vuxy!",
-    "please": "الرجاء تسجيل الدخول إلى حسابك وبدء المغامرة",
-    "admin": "المسئول",
-    "client": "العميل",
-    "tooltip": "هذا فقط لغرض العرض التوضيحي لقائمة التحكم بالوصول (ACL)",
-    "new_platform": "هل أنت جديد على منصتنا ؟",
-    "new_account": "أنشئ حساب جديد"
-  },
-  "sidebar": {
-    "dashboard": "لوحة التحكم",
-    "email": "البريد الإلكترونى",
-    "eCommerce": "التجارة الإلكترونية",
-    "analytics": "التحليلات",
-    "apps": "التطبيقات",
-    "pages": "الصفحات"
-  },
-  "navbar": {
-    "arabic": "العربية",
-    "english": "الإنجليزية",
-    "german": "الألمانية",
-    "admin": "مسئول",
-    "profile": "الصفحة الشخصية",
-    "setting": "الإعدادات",
-    "logout": "تسجيل الخروج"
-  },
-  "footer": {
-    "copyright": "حقوق النشر © 2022",
-    "all": "كل الحقوق محفوظة ,",
-    "link": "Pixinvent",
-    "end": "تم التصميم بواسطة"
-  },
-  "inputs": {
-    "email": "البريد الإلكترونى",
-    "password": "كلمة المرور",
-    "forget": "هل نسيت كلمة المرور ؟"
-  },
-  "buttons": {
-    "login": "تسجيل الدخول",
-    "logout": "التسجيل"
-  },
-  "tables": {
-    "per_page": "لكل صفحة"
+  "start": "مرحبًا",
+  "home": "الرئيسية",
+  "activities": "الأنشطة",
+  "activity": "نشاط",
+  "championships": "البطولات",
+  "championship": "بطولة",
+  "coaches": "المدربون",
+  "coach": "مدرب",
+  "moderators": "الإداريون",
+  "moderator": "إدارى",
+  "colors": "الألوان",
+  "color": "لون",
+  "belts": "الأحزمة",
+  "belt": "حزام",
+  "players": "اللاعبين",
+  "player": "لاعب",
+  "events": "الأحداث",
+  "event": "حدث",
+  "mediaTypes": "أنواع الوسائط",
+  "mediaType": "نوع الوسائط",
+  "multiMedia": "الوسائط",
+  "create": "إنشاء",
+  "update": "تحديث",
+  "name": "الإسم",
+  "date": "التاريخ",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "profile": "الصفحة الشخصية",
+  "logout": "تسجيل الخروج",
+  "edit": "تعديل",
+  "delete": "حذف",
+  "actions": "إجراءات",
+  "add": "إضافة",
+  "search": "بحث",
+  "eventType": "نوع الحدث",
+  "description": "الوصف",
+  "videos": "المقاطع المرئية",
+  "video": "مقطع مرئي",
+  "videoUrl": "رابط المقطع المرئي",
+  "videoTitle": "عنوان المقطع المرئي",
+  "delConfirm": "هل أنت متأكد من رغبتك في حذف هذا العنصر ؟",
+  "lastBelt": "آخر حزام",
+  "birthDate": "تاريخ الميلاد",
+  "fileNumber": "رقم الملف",
+  "nationalId": "الرقم القومى",
+  "cancel": "إلغاء",
+  "confirm": "تأكيد",
+  "image": "الصورة",
+  "images": "الصور",
+  "startDate": "تاريخ البداية",
+  "loading": "تحميل",
+  "noItems": "لا توجد عناصر",
+  "canCreate": "يمكنك إنشاء",
+  "canUpdate": "يمكنك تحديث",
+  "select": "اختر",
+  "yourAccount": "إلى حسابك",
+  "signIn": "تسجيل الدخول",
+  "signUp": "التسجيل",
+  "emailAddress": "البريد الإلكترونى",
+  "password": "كلمة المرور",
+  "passwordConfirm": "تأكيد كلمة المرور",
+  "newOnOurPlatform": "جديد على منصتنا؟",
+  "createAnAccount": "إنشاء حساب",
+  "signInInstead": "قم بتسجيل الدخول بدلاً من ذلك",
+  "alreadyHaveAnAccount": "هل لديك حساب ؟",
+  "forgetPassword": "هل نسيت كلمة المرور ؟",
+  "admins": "المسئولين",
+  "users": "المستخدمين",
+  "role": "الصلاحية",
+  "changeRole": "تغيير صلاحية",
+  "user": "المستخدم",
+  "email": "البريد الإلكترونى",
+  "reset": "إعادة تهيئة",
+  "clickHere": "إضغط هنا",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "filterBy": "بحث بواسطة",
+  "backToLogin": "هل نسيت كلمة المرور ؟"
+
+
+
+
+
+
+
   }
-}

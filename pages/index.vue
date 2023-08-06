@@ -1,44 +1,15 @@
 <template>
-  <div>
-    <LandingPageHero />
-    <LandingPageAbout />
-    <LandingPageSkills />
-    <LandingPageProjects :more="true" />
-    <LandingPageCompanies />
-    <hr />
-    <LandingPageSocial />
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-5"
+  >
+    <UtilsTheStatsCard :cards="cards.data" />
   </div>
 </template>
 
-<script>
-export default {
-  name: "IndexPage",
-  async asyncData({ $fire, store }) {
-    await $fire.firestore
-      .collection("projects")
-      .limit(3)
-      .onSnapshot((res) => {
-        store.dispatch("dashboard/projects/getAllDataFromApi", res);
-      });
-
-    await $fire.firestore.collection("heroTitle").onSnapshot((res) => {
-      store.dispatch("dashboard/title/getAllDataFromApi", res);
-    });
-
-    await $fire.firestore.collection("skills").onSnapshot((res) => {
-      store.dispatch("dashboard/skills/getAllDataFromApi", res);
-    });
-
-    await $fire.firestore
-      .collection("companies")
-      .orderBy("createdAt", "asc")
-      .onSnapshot((res) => {
-        store.dispatch("dashboard/companies/getAllDataFromApi", res);
-      });
-    return {};
-  },
-  data() {
-    return {};
-  },
-};
+<script setup>
+const { data: cards } = await useFetch("/api/dashboard");
 </script>
+
+
+<style scoped>
+</style>
