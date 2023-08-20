@@ -1,3 +1,15 @@
 @import "./style/nuxt-icon";
 @import "./style/sidebar";
 @import "./style/ui";
+
+.main-title {
+  @apply bg-custom-gradient bg-clip-text;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.hover\:main-title {
+  &:hover {
+    @apply bg-custom-gradient bg-clip-text;
+    -webkit-text-fill-color: transparent !important;
+  }
+}

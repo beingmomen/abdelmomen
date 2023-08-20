@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       title: process.env.BROWSER_TITLE,
       script: [
         // <script src="https://myawesome-lib.js"></script>
-        { src: 'https://upload-widget.cloudinary.com/global/all.js' }
+        { src: 'https://upload-widget.cloudinary.com/global/all.js' },
       ],
       link: [{ rel: 'icon', type: 'image/svg', href: `/images/${process.env.LOGO}.svg` }]
 
@@ -29,16 +29,27 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-icons',
     'nuxt-icon',
+    'nuxt-swiper',
     '@nuxtjs/i18n',
     '@tailvue/nuxt',
     ['@nuxtjs/google-fonts', {
       families: {
         'Nunito': true,
+        'Shrikhand': true,
+        'Courgette': true,
         download: true,
         inject: true
       }
     }]
   ],
+
+  swiper: {
+    // Swiper options
+    //----------------------
+    // prefix: 'Swiper',
+    // styleLang: 'css',
+    // modules: ['navigation', 'pagination'], // all modules are imported by default
+  },
 
   i18n: {
     vueI18n: './i18n.config.ts', // if you are using custom path, default 

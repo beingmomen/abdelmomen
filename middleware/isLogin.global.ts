@@ -21,6 +21,11 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
     await setUser(user)
 
+
+    if (to.meta.layout === 'landing') {
+      return
+    }
+
     if (to.meta.layout === 'auth') {
       if (user) {
         return navigateTo('/')

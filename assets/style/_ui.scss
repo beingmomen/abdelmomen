@@ -22,3 +22,10 @@
     height: 100%;
   }
 }
+
+.nuxt-icon {
+  &.nuxt-icon.nuxt-icon--fill,
+  &.nuxt-icon.nuxt-icon--fill * {
+    fill: deepskyblue !important;
+  }
+}

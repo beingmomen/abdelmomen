@@ -68,9 +68,12 @@ const logo = computed(() => {
 </script>
 
 <style lang="scss">
-.nuxt-icon-auth {
-  svg {
-    margin: auto;
+.nuxt-icon {
+  &.nuxt-icon-auth {
+    fill: unset !important;
+    svg {
+      margin: auto;
+    }
   }
 }
 </style>

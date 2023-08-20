@@ -11,7 +11,7 @@
 
 <script setup>
 const colorMode = useColorMode();
-colorMode.preference = "light";
+colorMode.preference = "dark";
 
 // const activities = useActivities();
 // activities.getAll();
