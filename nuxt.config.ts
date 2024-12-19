@@ -178,7 +178,7 @@ export default defineNuxtConfig({
       "4k": 1921,
     },
 
-    domains: ["img.youtube.com", "i.vimeocdn.com"],
+    domains: ["beingmomen.com", "https://beingmomen.com"],
 
     alias: {
       youtube: "https://img.youtube.com",
