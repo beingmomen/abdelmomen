@@ -153,8 +153,6 @@ export default defineNuxtConfig({
     uploadPreset: "beingmomen",
   },
 
-  css: [],
-
   imports: {
     dirs: [],
   },
