@@ -211,7 +211,7 @@ export default defineNuxtConfig({
 
   vite: {
     build: {
-      cssCodeSplit: true, // Split CSS into chunks
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
           manualChunks: {
