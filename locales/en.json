@@ -1,46 +1,13 @@
 {
-  "login": {
-    "welcome": "Welcome to Vuexy!",
-    "please": "Please sign-in to your account and start the adventure",
-    "admin": "Admin",
-    "client": "Client",
-    "tooltip": "This is just for ACL demo purpose",
-    "new_platform": "New on our platform?",
-    "new_account": "Create an account"
+  "system": {
+    "title": "Abdelmomen Elshatory",
+    "description": "Abdelmomen Elshatory, a frontend developer specializing in high-performance web applications using Vue.js and Nuxt.js. I transform ideas into interactive and innovative web experiences.",
+    "og:title": "Abdelmomen Elshatory | Frontend Developer specializing in Vue.js and Nuxt.js",
+    "og:description": "A frontend developer specializing in high-performance web applications using Vue.js and Nuxt.js."
   },
-  "sidebar": {
-    "dashboard": "Dashboard",
-    "email": "Email",
-    "eCommerce": "eCommerce",
-    "analytics": "Analytics",
-    "apps": "Apps",
-    "pages": "Pages"
-  },
-  "navbar": {
-    "arabic": "Arabic",
-    "english": "English",
-    "german": "German",
-    "admin": "Admin",
-    "profile": "Profile",
-    "setting": "Settings",
-    "logout": "Logout"
-  },
-  "footer": {
-    "copyright": "COPYRIGHT © 2022",
-    "all": "All rights Reserved ,",
-    "link": "Pixinvent",
-    "end": "Hand-crafted & Made with"
-  },
-  "inputs": {
-    "email": "ُEmail",
-    "password": "Password",
-    "forget": "Forgot Password?"
-  },
-  "buttons": {
-    "login": "Sign in",
-    "logout": "Sign Up"
-  },
-  "tables": {
-    "per_page": "Per Page"
-  }
+  "me": "I’m",
+  "various_services": "Various services",
+  "our_services": "Our services",
+  "description": "Frontend Developer specialized in Vue.js and Nuxt.js. I have experience in developing high-performance web applications with responsive designs using the latest technologies such as Nuxt 3 and TailwindCSS. I focus on turning ideas into interactive and innovative web experiences.",
+  "welcome": "Hello everyone!"
 }
