@@ -160,7 +160,6 @@ export default defineNuxtConfig({
   },
 
   image: {
-    // inject: true,
     quality: 80,
     cloudinary: {
       baseURL: process.env.CLOUDINARY_URL,
