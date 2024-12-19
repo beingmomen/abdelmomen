@@ -204,7 +204,6 @@ export default defineNuxtConfig({
 
   compatibilityDate: "2024-08-30",
 
-  // Enable Nuxt's experimental tree-shaking
   experimental: {
     viewTransition: true,
     treeshakeClientOnly: true,
