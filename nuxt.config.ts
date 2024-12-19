@@ -242,8 +242,6 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {},
-
   sourcemap: {
     server: true,
     client: true,
